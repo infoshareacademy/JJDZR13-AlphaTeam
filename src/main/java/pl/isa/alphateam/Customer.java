@@ -5,15 +5,25 @@ import java.util.Date;
 public class Customer {
     private String firstName;
     private String lastName;
-    private Date birthdayDate;
-    private String patentNo;
-    private Address address;
+    private String birthdayDate;
 
-    public Customer(String firstName, String lastName, Date birthdayDate, String patentNo) {
+    private String patentNo;
+
+    private Address address;
+    private String emailAddress;
+    private String password;
+    public Customer() {
+
+    }
+
+    public Customer(String firstName, String lastName, String birthdayDate, String patentNo, Address address, String emailAddress, String password) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.birthdayDate = birthdayDate;
         this.patentNo = patentNo;
+        this.address = address;
+        this.emailAddress = emailAddress;
+        this.password = password;
     }
 
     public String getFirstName() {
@@ -32,11 +42,11 @@ public class Customer {
         this.lastName = lastName;
     }
 
-    public Date getBirthdayDate() {
+    public String getBirthdayDate() {
         return birthdayDate;
     }
 
-    public void setBirthdayDate(Date birthdayDate) {
+    public void setBirthdayDate(String birthdayDate) {
         this.birthdayDate = birthdayDate;
     }
 
@@ -46,5 +56,42 @@ public class Customer {
 
     public void setPatentNo(String patentNo) {
         this.patentNo = patentNo;
+    }
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
+    }
+
+    public String getEmailAddress() {
+        return emailAddress;
+    }
+
+    public void setEmailAddress(String emailAddress) {
+        this.emailAddress = emailAddress;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", birthdayDate='" + birthdayDate + '\'' +
+                ", patentNo='" + patentNo + '\'' +
+                ", address=" + address +
+                ", emailAddress='" + emailAddress + '\'' +
+                ", password='" + password + '\'' +
+                '}';
     }
 }

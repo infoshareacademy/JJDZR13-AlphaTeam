@@ -4,9 +4,9 @@ public class Address {
     String country;
     String city;
     String street;
-    String streetNo;
+    int streetNo;
 
-    public Address(String country, String city, String street, String streetNo) {
+    public Address(String country, String city, String street, int streetNo) {
         this.country = country;
         this.city = city;
         this.street = street;
@@ -33,15 +33,25 @@ public class Address {
         return street;
     }
 
+    @Override
+    public String toString() {
+        return "Address{" +
+                "country='" + country + '\'' +
+                ", city='" + city + '\'' +
+                ", street='" + street + '\'' +
+                ", streetNo=" + streetNo +
+                '}';
+    }
+
     public void setStreet(String street) {
         this.street = street;
     }
 
-    public String getStreetNo() {
+    public int getStreetNo() {
         return streetNo;
     }
 
-    public void setStreetNo(String streetNo) {
+    public void setStreetNo(int streetNo) {
         this.streetNo = streetNo;
     }
 }
