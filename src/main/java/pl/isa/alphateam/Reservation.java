@@ -2,6 +2,7 @@ package pl.isa.alphateam;
 
 import java.time.Duration;
 import java.time.LocalDate;
+import java.util.UUID;
 
 
 public class Reservation {
@@ -23,6 +24,15 @@ public class Reservation {
     long dayNo = Duration.between(startDate.atStartOfDay(), endDate.atStartOfDay()).toDays();
         return boat.getCostPerDay()*dayNo;
     }
+
+    public String getUUID(){
+        UUID uuid = UUID.randomUUID();
+        System.out.println("Twój kod potrzebny do rezerwacji to: " + uuid);
+        System.out.println("Wpisz go po zarejestrowaniu");
+        return null;
+    }
+
+
 
 
 
