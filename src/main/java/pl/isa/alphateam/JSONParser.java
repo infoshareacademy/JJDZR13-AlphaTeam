@@ -55,7 +55,8 @@ public class JSONParser {
     }
 
     public static void saveBoatInDatabase(Boat boat) throws IOException, ParseException {
-         JSONObject jsonObject = new JSONObject();
+       //boats are taken from databased in function addJSONObjectToJSONObjectListAndReturnString
+        JSONObject jsonObject = new JSONObject();
         String json = createJSONObjectAndReturnString(boat, jsonObject);
         String jsons = addJSONObjectToJSONObjectListAndReturnString(jsonObject);
         saveJSONsToFile(json, jsons);
