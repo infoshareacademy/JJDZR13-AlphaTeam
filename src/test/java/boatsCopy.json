@@ -1,0 +1,97 @@
+[ {
+  "isAvailable" : true,
+  "name" : "BoatName",
+  "costPerDay" : 100.5,
+  "capacity" : 5,
+  "boatId" : "b1test"
+}, {
+  "isAvailable" : true,
+  "name" : "Banana Boat",
+  "costPerDay" : 251.2,
+  "boatId " : "1Ban",
+  "capacity" : 12
+}, {
+  "isAvailable" : false,
+  "name" : "Cruise Ship",
+  "costPerDay" : 36541.2,
+  "boatId " : "1Cru",
+  "capacity" : 1200
+}, {
+  "isAvailable" : true,
+  "name" : "Cable Ferry",
+  "costPerDay" : 21.3,
+  "boatId " : "1Cab",
+  "capacity" : 25
+}, {
+  "isAvailable" : true,
+  "name" : "Car Boat",
+  "costPerDay" : 15.24,
+  "boatId " : "1Car",
+  "capacity" : 2
+}, {
+  "isAvailable" : true,
+  "name" : "Canoe",
+  "costPerDay" : 6.54,
+  "boatId " : "1Can",
+  "capacity" : 5
+}, {
+  "isAvailable" : true,
+  "name" : "BoatName",
+  "costPerDay" : 100.5,
+  "capacity" : 5,
+  "boatId" : "b1"
+}, {
+  "isAvailable" : true,
+  "name" : "BoatName",
+  "costPerDay" : 100.5,
+  "capacity" : 5,
+  "boatId" : "b1"
+}, {
+  "isAvailable" : true,
+  "name" : "BoatName",
+  "costPerDay" : 100.5,
+  "capacity" : 5,
+  "boatId" : "b1"
+}, {
+  "isAvailable" : true,
+  "name" : "BoatName",
+  "costPerDay" : 100.5,
+  "capacity" : 5,
+  "boatId" : "b1"
+}, {
+  "isAvailable" : true,
+  "name" : "BoatName",
+  "costPerDay" : 100.5,
+  "capacity" : 5,
+  "boatId" : "b1"
+}, {
+  "isAvailable" : true,
+  "name" : "BoatName",
+  "costPerDay" : 100.5,
+  "capacity" : 5,
+  "boatId" : "b1"
+}, {
+  "isAvailable" : true,
+  "name" : "BoatName",
+  "costPerDay" : 100.5,
+  "capacity" : 5,
+  "boatId" : "b1"
+}, {
+  "isAvailable" : true,
+  "name" : "BoatName",
+  "costPerDay" : 100.5,
+  "capacity" : 5,
+  "boatId" : "b1"
+}, {
+  "isAvailable" : true,
+  "name" : "ChangeName",
+  "costPerDay" : 12220.5,
+  "capacity" : 5,
+  "boatId" : "b1"
+}, {
+  "isAvailable" : true,
+  "name" : "MichalBoat",
+  "costPerDay" : 1.20000005E7,
+  "capacity" : 4,
+  "boatId" : "Alpha teeam"
+} ]
