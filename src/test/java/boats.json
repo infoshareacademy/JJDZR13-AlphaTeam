@@ -8,31 +8,31 @@
   "isAvailable" : true,
   "name" : "Banana Boat",
   "costPerDay" : 251.2,
-  "boatId " : "1Ban",
+  "boatId" : "b2test",
   "capacity" : 12
 }, {
   "isAvailable" : false,
   "name" : "Cruise Ship",
   "costPerDay" : 36541.2,
-  "boatId " : "1Cru",
+  "boatId" : "1Cru",
   "capacity" : 1200
 }, {
   "isAvailable" : true,
   "name" : "Cable Ferry",
   "costPerDay" : 21.3,
-  "boatId " : "1Cab",
+  "boatId" : "1Cab",
   "capacity" : 25
 }, {
   "isAvailable" : true,
   "name" : "Car Boat",
   "costPerDay" : 15.24,
-  "boatId " : "1Car",
+  "boatId" : "1Car",
   "capacity" : 2
 }, {
   "isAvailable" : true,
   "name" : "Canoe",
   "costPerDay" : 6.54,
-  "boatId " : "1Can",
+  "boatId" : "1Can",
   "capacity" : 5
 }, {
   "isAvailable" : true,
@@ -103,6 +103,18 @@
 }, {
   "isAvailable" : true,
   "name" : "MichalBoat",
+  "costPerDay" : 1.20000005E7,
+  "capacity" : 4,
+  "boatId" : "Alpha teeam"
+}, {
+  "isAvailable" : true,
+  "name" : "Wonder",
+  "costPerDay" : 1.20000005E7,
+  "capacity" : 4,
+  "boatId" : "Alpha teeam"
+}, {
+  "isAvailable" : true,
+  "name" : "Wonder",
   "costPerDay" : 1.20000005E7,
   "capacity" : 4,
   "boatId" : "Alpha teeam"

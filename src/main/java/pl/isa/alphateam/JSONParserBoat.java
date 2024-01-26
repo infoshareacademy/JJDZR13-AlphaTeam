@@ -13,14 +13,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class JSONParser {
+public class JSONParserBoat {
     static ObjectMapper mapper = new ObjectMapper();
     static String boatJSONFilePath = "src/test/java/boats.json";
     static List<Boat> boatList = new ArrayList<>();
     static org.json.simple.parser.JSONParser parser = new org.json.simple.parser.JSONParser();
 
 
-    private JSONParser() {
+    private JSONParserBoat() {
         throw new IllegalStateException("Utility class");
     }
 

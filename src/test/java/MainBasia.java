@@ -3,7 +3,8 @@ import pl.isa.alphateam.Boat;
 
 import java.io.IOException;
 
-import static pl.isa.alphateam.JSONParser.saveBoatInDatabase;
+import static pl.isa.alphateam.JSONParserBoat.getListOfBoatsFromDatabase;
+import static pl.isa.alphateam.JSONParserBoat.saveBoatInDatabase;
 
 //https://javacodepoint.com/jackson-json-serialization-and-deserialization/
 //problem with jackson "mvn clean install -U" that helped with dependency
@@ -22,7 +23,7 @@ public class MainBasia {
         System.out.println(cost);*/
         //Json PArser ->JSON simple
 
-     //   getListOfBoatsFromDatabase();
+        getListOfBoatsFromDatabase();
         Boat boatForBasia = new Boat("Wonder", 4, 12000000.5, true, "Alpha teeam");
         saveBoatInDatabase(boatForBasia);
 

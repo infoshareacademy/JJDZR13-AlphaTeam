@@ -3,8 +3,8 @@ import pl.isa.alphateam.Boat;
 
 import java.io.IOException;
 
-import static pl.isa.alphateam.JSONParser.getListOfBoatsFromDatabase;
-import static pl.isa.alphateam.JSONParser.saveBoatInDatabase;
+import static pl.isa.alphateam.JSONParserBoat.getListOfBoatsFromDatabase;
+import static pl.isa.alphateam.JSONParserBoat.saveBoatInDatabase;
 
 public class MainMichal {
     public static void main(String[] args) throws IOException, ParseException {
