@@ -10,6 +10,7 @@ public class Boat {
     public Boat() {
 
     }
+
     public Boat(String name, int capacity, double costPerDay, boolean isAvailable, String boatId) {
         this.name = name;
         this.capacity = capacity;
@@ -53,7 +54,7 @@ public class Boat {
         this.costPerDay = costPerDay;
     }
 
-    public boolean isAvailable() {
+    public boolean getIsAvailable() {
         return isAvailable;
     }
 
