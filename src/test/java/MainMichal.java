@@ -1,7 +1,15 @@
+import pl.isa.alphateam.Boat;
+
+import java.time.LocalDate;
+import java.util.List;
+
+import static pl.isa.alphateam.JSONParserBoat.getListOfBoatsFromDatabase;
+import static pl.isa.alphateam.JSONParserBoat.saveBoatInDatabase;
+
 public class MainMichal {
     public static void main(String[] args) {
-//        getListOfBoatsFromDatabase();
-//        Boat boatForBasia = new Boat("MichalBoat", 4, 12000000.5, true, "Alpha teeam");
-//        saveBoatInDatabase(boatForBasia);
+        List<Boat> boats = getListOfBoatsFromDatabase();
+        boats.forEach(System.out::println);
+        saveBoatInDatabase(boats);
     }
 }

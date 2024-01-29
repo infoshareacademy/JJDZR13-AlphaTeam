@@ -1,11 +1,20 @@
 package pl.isa.alphateam;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import java.time.LocalDate;
+
+@JsonIgnoreProperties
 public class Boat {
     private String name;
     private int capacity;
     private double costPerDay;
     private boolean isAvailable;
     private String boatId;
+
+    private LocalDate date;
 
     public Boat() {
 
@@ -68,5 +77,19 @@ public class Boat {
 
     public void setBoatId(String boatId) {
         this.boatId = boatId;
+    }
+
+    @JsonProperty("date")
+    public String getDateProperty() {
+        return date.toString();
+    }
+
+    public void setDateProperty(String date) {
+        this.date = LocalDate.parse(date);
+    }
+
+    @JsonIgnore
+    public LocalDate getDate() {
+        return date;
     }
 }
