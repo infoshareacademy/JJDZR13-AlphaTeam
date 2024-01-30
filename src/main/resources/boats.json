@@ -1,1 +1,29 @@
-[{"name":"BoatName","capacity":5,"costPerDay":100.5,"isAvailable":true,"boatId":"b1test","date":"2024-01-29"},{"name":"Banana Boat","capacity":12,"costPerDay":251.2,"isAvailable":true,"boatId":"b2test","date":"2024-01-29"},{"name":"Cruise Ship","capacity":1200,"costPerDay":36541.2,"isAvailable":false,"boatId":"1Cru","date":"2024-01-29"}]
+[ {
+  "name" : "BoatName",
+  "capacity" : 5,
+  "costPerDay" : 100.5,
+  "isAvailable" : true,
+  "boatId" : "b1test",
+  "date" : "2024-01-29"
+}, {
+  "name" : "Banana Boat",
+  "capacity" : 12,
+  "costPerDay" : 251.2,
+  "isAvailable" : true,
+  "boatId" : "b2test",
+  "date" : "2024-01-29"
+}, {
+  "name" : "Cruise Ship",
+  "capacity" : 1200,
+  "costPerDay" : 36541.2,
+  "isAvailable" : false,
+  "boatId" : "1Cru",
+  "date" : "2024-01-29"
+},  {
+  "name" : "Wreck Ship",
+  "capacity" : 1,
+  "costPerDay" : 0.2,
+  "isAvailable" : true,
+  "boatId" : "1Wre",
+  "date" : "2024-01-29"
+} ]
