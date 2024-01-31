@@ -31,7 +31,7 @@ public class JSONParserBoat {
     public static boolean saveBoatInDatabase(List<Boat> boatList) {
         try {
             ObjectMapper objectMapper = new ObjectMapper();
-            objectMapper.writeValue(new File(BOAT_JSON_FILE_PATH), boatList);
+            objectMapper.writerWithDefaultPrettyPrinter().writeValue(new File(BOAT_JSON_FILE_PATH), boatList);
             return true;
         } catch (IOException e) {
             return false;
