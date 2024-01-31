@@ -1,4 +1,5 @@
 import pl.isa.alphateam.Boat;
+import pl.isa.alphateam.Menu;
 
 import java.util.List;
 
@@ -14,6 +15,9 @@ public class MainBasia {
 
         boolean written = saveBoatInDatabase(boats);
         System.out.println(written);
+
+        Menu.printMainPanelMenu();
+
     }
 
 }
