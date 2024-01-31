@@ -9,7 +9,7 @@ public class MainBasia {
     public static void main(String[] args) {
         List<Boat> boats = getListOfBoatsFromDatabase();
         for (Boat boat : boats) {
-            System.out.println(boat.getName());
+            System.out.println(boat);
         }
 
         boolean written = saveBoatInDatabase(boats);
