@@ -3,35 +3,35 @@
   "capacity" : 5,
   "costPerDay" : 100.5,
   "isAvailable" : true,
-  "boatId" : 1
+  "boatId" : "b1test"
 }, {
   "name" : "Banana Boat",
   "capacity" : 12,
   "costPerDay" : 251.2,
   "isAvailable" : true,
-  "boatId" : 2
+  "boatId" : "b2test"
 }, {
   "name" : "Cruise Ship",
   "capacity" : 1200,
   "costPerDay" : 36541.2,
   "isAvailable" : false,
-  "boatId" : 3
+  "boatId" : "1Cru"
 }, {
   "name" : "Wreck",
   "capacity" : 1,
   "costPerDay" : 0.2,
   "isAvailable" : false,
-  "boatId" : 4
+  "boatId" : "1Wre"
 }, {
   "name" : "To Ship",
   "capacity" : 10,
   "costPerDay" : 31.2,
   "isAvailable" : true,
-  "boatId" : 5
+  "boatId" : "1ToS"
 }, {
   "name" : "Just a boat",
   "capacity" : 1,
   "costPerDay" : 23.2,
   "isAvailable" : false,
-  "boatId" : 6
+  "boatId" : "1Jus"
 } ]
