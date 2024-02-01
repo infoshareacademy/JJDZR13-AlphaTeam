@@ -15,9 +15,8 @@ public class Reservation {
     private Customer customer;
     private Boat boat;
 
-
-
-
+    public Reservation() {
+    }
 
     public Reservation(LocalDate startDate, LocalDate endDate, Customer customer, Boat boat) {
         this.startDate = startDate;
@@ -55,7 +54,7 @@ public class Reservation {
     public LocalDate getEndDate() {
         return endDate;
     }
-    
+
 
     public void setEndDate(LocalDate endDate) {
         this.endDate = endDate;
@@ -77,43 +76,19 @@ public class Reservation {
         this.boat = boat;
     }
 
-
-
-
-
-
-
+    @JsonIgnore
     public Double getCostOfReservation() {
-    long dayNo = Duration.between(startDate.atStartOfDay(), endDate.atStartOfDay()).toDays();
-        return boat.getCostPerDay()*dayNo;
+        long dayNo = Duration.between(startDate.atStartOfDay(), endDate.atStartOfDay()).toDays();
+        return boat.getCostPerDay() * dayNo;
     }
 
-
-
-
-
-
-
-    public String getUUID(){
+    @JsonIgnore
+    public String getUUID() {
         UUID uuid = UUID.randomUUID();
         System.out.println("Twój kod potrzebny do rezerwacji to: " + uuid);
         System.out.println("Wpisz go po zarejestrowaniu");
         return null;
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 }

@@ -6,6 +6,7 @@ import pl.isa.alphateam.Reservation;
 
 import java.io.IOException;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 import static pl.isa.alphateam.JSONParserBoat.getListOfBoatsFromDatabase;
@@ -24,25 +25,16 @@ public class MainMichal {
         Customer customerM = new Customer("Michal", "Skoczylas", "1996-01-22",
                 "123456", addressM, "m.skoczylas1996@gmail.com", "babajaga");
 
-//        Reservation reservationM = new Reservation(LocalDate.of(2024, 02, 02),
-//                LocalDate.of(2024, 02, 05), customerM, boatM);
+        Reservation reservationM = new Reservation(LocalDate.of(2024, 02, 02),
+                LocalDate.of(2024, 02, 05), customerM, boatM);
 
-        Reservation reservationM = new Reservation("2024-02-02", "2024-02-05", customerM, boatM);
-
-
+//        Reservation reservationM = new Reservation("2024-02-02", "2024-02-05", customerM, boatM);
 
 
-
-
-
-
-
-
-
-
-
-       // saveReservationInDatabase(reservationM);
-
+        // tu musisz przekazywać listę
+        List<Reservation> reservations = new ArrayList<>();
+        reservations.add(reservationM);
+        saveReservationInDatabase(reservations);
 
 
 //        List<Boat> boats = getListOfBoatsFromDatabase();
@@ -50,10 +42,10 @@ public class MainMichal {
 //            System.out.println(boat);
 //        }
 //
-//        List<Reservation> reservations = getListOfReservationsFromDatabase();
-//        for (Reservation reservation : reservations) {
-//            System.out.println(reservation);
-//        }
+        reservations = getListOfReservationsFromDatabase();
+        for (Reservation reservation : reservations) {
+            System.out.println(reservation);
+        }
 //
 //
 //        boolean written = saveReservationInDatabase(reservations);
