@@ -5,8 +5,12 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.time.Duration;
 import java.time.LocalDate;
+import java.util.List;
 import java.util.Map;
 import java.util.UUID;
+
+import static pl.isa.alphateam.JSONParserBoat.getListOfBoatsFromDatabase;
+import static pl.isa.alphateam.JSONParserBoat.saveBoatInDatabase;
 
 
 public class Reservation {
@@ -23,6 +27,16 @@ public class Reservation {
         this.endDate = endDate;
         this.customer = customer;
         this.boat = boat;
+    }
+
+    @Override
+    public String toString() {
+        return "Reservation{" +
+                "startDate='" + startDate + '\'' +
+                ", endDate=" + endDate +
+                ", customer=" + customer +
+                ", boat='" + boat + '\'' +
+                '}';
     }
 
 

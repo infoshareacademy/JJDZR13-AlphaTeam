@@ -34,6 +34,7 @@ public class Boat {
                 '}';
     }
 
+
     public void setName(String name) {
         this.name = name;
     }
