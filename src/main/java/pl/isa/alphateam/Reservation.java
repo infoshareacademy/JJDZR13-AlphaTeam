@@ -96,13 +96,6 @@ public class Reservation {
         return boat.getCostPerDay() * dayNo;
     }
 
-    @JsonIgnore
-    public String getUUID() {
-        UUID uuid = UUID.randomUUID();
-        System.out.println("Twój kod potrzebny do rezerwacji to: " + uuid);
-        System.out.println("Wpisz go po zarejestrowaniu");
-        return null;
-    }
 
 
 }

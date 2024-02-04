@@ -4,23 +4,20 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 
 
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
-import java.lang.reflect.Type;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 import static pl.isa.alphateam.JSONParserBoat.getListOfBoatsFromDatabase;
-import static pl.isa.alphateam.JSONParserBoat.saveBoatInDatabase;
+
 import static pl.isa.alphateam.JSONParserReservation.saveReservationInDatabase;
 
 public class BoatReservationSystem {
 
 
     public static void main(String[] args) {
+
         Scanner scanner = new Scanner(System.in);
 
 
@@ -33,13 +30,27 @@ public class BoatReservationSystem {
 
 
         // Wprowadzanie danych przez użytkownika
-        System.out.print("Select start date: (RRRR-MM-DD): ");
-        String startDateStr = scanner.nextLine();
-        LocalDate startDate = LocalDate.parse(startDateStr);
+        LocalDate startDate = null;
+        while (startDate == null) {
+            System.out.print("Select start date: (RRRR-MM-DD): ");
+            String startDateStr = scanner.nextLine();
+            try {
+                startDate = LocalDate.parse(startDateStr);
+            } catch (Exception e) {
+                System.out.print("Wrong format ");
+            }
+        }
 
-        System.out.print("Select end date: (RRRR-MM-DD): ");
-        String endDateStr = scanner.nextLine();
-        LocalDate endDate = LocalDate.parse(endDateStr);
+        LocalDate endDate = null;
+        while (endDate == null) {
+            System.out.print("Select end date: (RRRR-MM-DD): ");
+            String endDateStr = scanner.nextLine();
+            try {
+                endDate = LocalDate.parse(endDateStr);
+            } catch (Exception e) {
+                System.out.print("Wrong format ");
+            }
+        }
 
 
         System.out.println("This is the available boats list: ");
@@ -49,27 +60,31 @@ public class BoatReservationSystem {
         }
 
 
-        System.out.println("Enter the ID of the boat you want to reserve: ");
-        int boatId = scanner.nextInt();
+        boolean reservationSuccessful = false;
 
+        while (!reservationSuccessful) {
+            System.out.println("Enter the ID of the boat you want to reserve: ");
+            int boatId = scanner.nextInt();
+            for (Boat boat : getListOfBoatsFromDatabase()) {
+                if (boat.getBoatId() == boatId && boat.getIsAvailable()) {
+                    boat.setAvailable(false);
+                    System.out.println("Reservation successful! You have reserved " + boat.getName());
+                    reservationSuccessful = true;
+                    Reservation reservation = new Reservation(startDate, endDate, customer, boat);
+                    System.out.println("Rezerwacja dodana: " + reservation.getStartDate() + " - " +
+                            reservation.getEndDate() +
+                            " dla klienta " + reservation.getCustomer().getFirstName() + " na łódź " +
+                            reservation.getBoat().getName());
 
-        for (Boat boat : getListOfBoatsFromDatabase()) {
-            if (boat.getBoatId() == boatId && boat.getIsAvailable()) {
-                boat.setAvailable(false);
-                System.out.println("Reservation successful! You have reserved " + boat.getName());
+                    List<Reservation> reservations = new ArrayList<>();
+                    reservations.add(reservation);
+                    saveReservationInDatabase(reservations);
+                    break;
+                }
+            }
 
-                Reservation reservation = new Reservation(startDate, endDate, customer, boat);
-                System.out.println("Rezerwacja dodana: " + reservation.getStartDate() + " - " +
-                        reservation.getEndDate() +
-                        " dla klienta " + reservation.getCustomer().getFirstName() + " na łódź " +
-                        reservation.getBoat().getName());
-
-                List<Reservation> reservations = new ArrayList<>();
-                reservations.add(reservation);
-                saveReservationInDatabase(reservations);
-
-                return;
-
+            if (!reservationSuccessful) {
+                System.out.println("Invalid boatId or the boat is not available. Please try again.");
             }
 
         }
@@ -77,8 +92,13 @@ public class BoatReservationSystem {
 
     }
 
-
 }
+
+
+
+
+
+
 
 
 
