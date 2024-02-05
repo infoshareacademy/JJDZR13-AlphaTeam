@@ -29,6 +29,7 @@ public class Customer {
         this.emailAddress = emailAddress;
         this.password = password;
     }
+
     public String getFirstName() {
         return firstName;
     }

@@ -5,12 +5,13 @@ public class Boat {
     private int capacity;
     private double costPerDay;
     private boolean isAvailable;
-    private String boatId;
+    private int boatId;
 
     public Boat() {
 
     }
-    public Boat(String name, int capacity, double costPerDay, boolean isAvailable, String boatId) {
+
+    public Boat(String name, int capacity, double costPerDay, boolean isAvailable, int boatId) {
         this.name = name;
         this.capacity = capacity;
         this.costPerDay = costPerDay;
@@ -33,6 +34,7 @@ public class Boat {
                 '}';
     }
 
+
     public void setName(String name) {
         this.name = name;
     }
@@ -53,7 +55,7 @@ public class Boat {
         this.costPerDay = costPerDay;
     }
 
-    public boolean isAvailable() {
+    public boolean getIsAvailable() {
         return isAvailable;
     }
 
@@ -61,11 +63,11 @@ public class Boat {
         isAvailable = available;
     }
 
-    public String getBoatId() {
+    public int getBoatId() {
         return boatId;
     }
 
-    public void setBoatId(String boatId) {
+    public void setBoatId(int boatId) {
         this.boatId = boatId;
     }
 }
