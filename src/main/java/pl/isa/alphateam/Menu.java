@@ -3,6 +3,7 @@ package pl.isa.alphateam;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
+
 public class Menu {
     static Scanner scanner = new Scanner(System.in);
     static Reporting reporting = new Reporting();
@@ -53,12 +54,22 @@ public class Menu {
         System.out.println("""
                 
                 1. Create Account
-                2. Save Changes
-                3. Cancel Creation
+                2. Cancel Creation
                 """);
 
-        //TO DO
+        int choice = getChosenMenuItem(2);
 
+        switch (choice) {
+            case 1 -> createAccount();
+            case 2 -> printMainPanelMenu();
+            default -> throw new IllegalStateException("Unexpected value: " + choice);
+        }
+    }
+    private static void createAccount() {
+        Customer newCustomer = CreateAccount.createCustomer();
+        CreateAccount.addCustomer(newCustomer);
+        System.out.println("Account created successfully!");
+        printRegisterFormMenu();
     }
 
     public static void printRegisterFormMenu() {
@@ -77,11 +88,29 @@ public class Menu {
     public static void printLoginToAccountMenu() {
         System.out.println("""
                 
-                1. Enter user name
+                1. Enter e-mail
                 2. Enter your password
 
                 """);
-        //TO DO
+        String emailAddress, password;
+        System.out.println("Enter e-mail: ");
+        emailAddress = scanner.next();
+        System.out.println("Enter login: ");
+        password = scanner.next();
+
+        if(login(emailAddress, password)) {
+            System.out.println("Login successful!");
+            printRegisterFormMenu();
+        }
+    }
+    private static boolean login(String emailAddress, String password) {
+        for (Customer customer : JSONParserCustomer.getListOfCustomerFromDatabase()) {
+            if (customer.getEmailAddress().equals(emailAddress) && customer.getPassword().equals(password)) {
+                return true;
+            }
+        }
+        System.out.println("Invalid e-mail or password. Please try again.");
+        return false;
     }
 
     public static int getChosenMenuItem(int itemsInMenu) {
@@ -104,5 +133,4 @@ public class Menu {
         Pattern pattern = Pattern.compile(regex);
         return pattern.matcher(choice).matches();
     }
-
 }

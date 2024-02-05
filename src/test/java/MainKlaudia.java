@@ -1,103 +1,58 @@
 import pl.isa.alphateam.Address;
+import pl.isa.alphateam.CreateAccount;
 import pl.isa.alphateam.Customer;
-import pl.isa.alphateam.Boat;
-import pl.isa.alphateam.Reservation;
-import java.util.HashMap;
-import java.util.Map;
+import pl.isa.alphateam.JSONParserCustomer;
+
+import java.util.List;
 import java.util.Scanner;
 
 public class MainKlaudia {
-    private static final Map<String, Customer> customersDatabase = new HashMap<>(); //tworzy hashmapę zawierającą użytkowników
-    private static final Scanner scanner = new Scanner(System.in);
-
     public static void main(String[] args) {
-        while (true) {
-            System.out.println("1. Utwórz nowe konto");
-            System.out.println("2. Zaloguj się");
-            System.out.println("3. Wyjdź");
+        Scanner scanner = new Scanner(System.in);
 
-            int choice = scanner.nextInt();
-            scanner.nextLine();
-
-            switch (choice) {
-                case 1:
-                    createAccount();
-                    break;
-                case 2:
-                    login();
-                    break;
-                case 3:
-                    System.out.println("Do widzenia!");
-                    System.exit(0);
-                default:
-                    System.out.println("Nieprawidłowy wybór. Spróbuj ponownie.");
-            }
-        }
+        testCreateAndAddCustomer(scanner); // Uruchom metodę testową
     }
 
-    private static void createAccount() {
-        System.out.println("Podaj imię:");
+    public static void testCreateAndAddCustomer(Scanner scanner) {
+
+        System.out.println("Enter name: ");
         String firstName = scanner.nextLine();
-
-        System.out.println("Podaj nazwisko:");
+        System.out.println("Enter surname: ");
         String lastName = scanner.nextLine();
-
-        System.out.println("Podaj datę urodzenia (w formacie yyyy-MM-dd):");
+        System.out.println("Enter date of birth (yyyy-MM-dd):");
         String birthdayDate = scanner.nextLine();
-
-        System.out.println("Podaj numer telefonu:");
+        System.out.println("Enter phone number:");
         String phoneNumber = scanner.nextLine();
-
-        System.out.println("Podaj numer patentu:");
+        System.out.println("Enter license number:");
         String patentNo = scanner.nextLine();
-
-        System.out.println("Podaj adres: państwo, miasto, ulicę, numer ulicy:");
-        String addressInput = scanner.nextLine();
-
-        String[] addressParts = addressInput.split(", "); //cały blok try-catch, bo nie działało wpisywanie adresu
-
-        if (addressParts.length == 4) {
-            String country = addressParts[0].trim();
-            String city = addressParts[1].trim();
-            String street = addressParts[2].trim();
-
-                int streetNo = Integer.parseInt(addressParts[3].trim());
-                Address address = new Address(country, city, street, streetNo);
-
-                System.out.println("Podaj adres email:");
-                String emailAddress = scanner.nextLine();
-
-                System.out.println("Podaj hasło:");
-                String password = scanner.nextLine();
-
-                try {
-                    Customer newCustomer = new Customer(firstName, lastName, birthdayDate, phoneNumber, patentNo, new Address(country,city, street, streetNo), emailAddress, password);
-                    customersDatabase.put(emailAddress, newCustomer);
-                    System.out.println("Konto utworzone pomyślnie.");
-
-                } catch (IllegalArgumentException e) {
-                    System.out.println("Błąd podczas tworzenia konta: " + e.getMessage());
-                }
-        } else {
-            System.out.println("Nieprawidłowy format adresu. Wprowadź go w formacie: państwo, miasto, ulica, numer ulicy");
-        }
-    }
-
-    private static void login() {
-        System.out.println("Podaj adres email:");
+        System.out.println("Enter country:");
+        String country = scanner.nextLine();
+        System.out.println("Enter city:");
+        String city = scanner.nextLine();
+        System.out.println("Enter street:");
+        String street = scanner.nextLine();
+        System.out.println("Enter street number:");
+        int streetNo = Integer.parseInt(scanner.nextLine());
+        System.out.println("Enter e-mail:");
         String emailAddress = scanner.nextLine();
-
-        System.out.println("Podaj hasło:"); 
+        System.out.println("Enter password:");
         String password = scanner.nextLine();
 
-        Customer customer = customersDatabase.get(emailAddress);
+        Address address = new Address(country, city, street, streetNo);
+        Customer customer = new Customer(firstName, lastName, birthdayDate, phoneNumber, patentNo, address, emailAddress, password);
 
-        if (customer != null && customer.getPassword().equals(password)) {
-            System.out.println("Zalogowano pomyślnie. Witaj, " + customer.getFirstName() + "!");
-        } else {
-            System.out.println("Błąd logowania. Sprawdź adres email i hasło.");
-        }
+        addCustomer(customer);
+    }
+
+    public static void addCustomer(Customer customer) {
+        List<Customer> customers = JSONParserCustomer.getListOfCustomerFromDatabase();
+
+        // Dodanie nowego klienta do listy klientów
+        customers.add(customer);
+
+        // Zapis całej listy klientów do pliku JSON
+        JSONParserCustomer.saveCustomerInDatabase(customers);
+
+        System.out.println("You successfully created new account.");
     }
 }
-
-
