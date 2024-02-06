@@ -7,12 +7,14 @@ import static pl.isa.alphateam.JSONParserBoat.getListOfBoatsFromDatabase;
 
 public class Reporting {
 
-    public void printListOfAvailableBoats() {
+    public static void printListOfAvailableBoats() {
         List<Boat> boats = getListOfBoatsFromDatabase();
+        int i = 1;
         for (Boat boat:boats) {
             if (boat.getIsAvailable()) {
-                System.out.printf("Boat: name= %s, capacity= %d, costPerDay= %f, boatId= %s %n",
+                System.out.printf("id: %d Boat: name= %s, capacity= %d, costPerDay= %f, boatId= %s %n", i,
                         boat.getName(),boat.getCapacity(), boat.getCostPerDay(), boat.getBoatId());
+                i++;
             }
         }
 

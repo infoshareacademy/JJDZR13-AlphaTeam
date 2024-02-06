@@ -1,0 +1,10 @@
+[ {
+  "firstName" : "First",
+  "lastName" : "Last",
+  "birthdayDate" : "10/10/10",
+  "patentNo" : "patentNo",
+  "address" : {
+    "country":"country", "city":"city","street":"Street","streetNo":1},
+  "emailAddress" : "email",
+  "password" : "password"
+}]

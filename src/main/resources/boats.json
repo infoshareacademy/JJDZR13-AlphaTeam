@@ -1,1 +1,65 @@
-[{"name":"BoatName","capacity":5,"costPerDay":100.5,"isAvailable":true,"boatId":1},{"name":"Banana Boat","capacity":12,"costPerDay":251.2,"isAvailable":true,"boatId":2},{"name":"Cruise Ship","capacity":1200,"costPerDay":36541.2,"isAvailable":false,"boatId":3},{"name":"Cable Ferry","capacity":25,"costPerDay":21.3,"isAvailable":true,"boatId":4},{"name":"Car Boat","capacity":2,"costPerDay":15.24,"isAvailable":true,"boatId":5},{"name":"Canoe","capacity":5,"costPerDay":6.54,"isAvailable":true,"boatId":6},{"name":"BoatName","capacity":5,"costPerDay":100.5,"isAvailable":true,"boatId":7},{"name":"BoatName","capacity":5,"costPerDay":100.5,"isAvailable":true,"boatId":8},{"name":"BoatName","capacity":5,"costPerDay":100.5,"isAvailable":true,"boatId":9}]
+[
+  {
+    "name": "BoatName",
+    "capacity": 5,
+    "costPerDay": 100.5,
+    "isAvailable": true,
+    "boatId": 1
+  },
+  {
+    "name": "Banana Boat",
+    "capacity": 12,
+    "costPerDay": 251.2,
+    "isAvailable": true,
+    "boatId": 2
+  },
+  {
+    "name": "Cruise Ship",
+    "capacity": 1200,
+    "costPerDay": 36541.2,
+    "isAvailable": false,
+    "boatId": 3
+  },
+  {
+    "name": "Cable Ferry",
+    "capacity": 25,
+    "costPerDay": 21.3,
+    "isAvailable": true,
+    "boatId": 4
+  },
+  {
+    "name": "Car Boat",
+    "capacity": 2,
+    "costPerDay": 15.24,
+    "isAvailable": true,
+    "boatId": 5
+  },
+  {
+    "name": "Canoe",
+    "capacity": 5,
+    "costPerDay": 6.54,
+    "isAvailable": true,
+    "boatId": 6
+  },
+  {
+    "name": "BoatName",
+    "capacity": 5,
+    "costPerDay": 100.5,
+    "isAvailable": true,
+    "boatId": 7
+  },
+  {
+    "name": "BoatName",
+    "capacity": 5,
+    "costPerDay": 100.5,
+    "isAvailable": true,
+    "boatId": 8
+  },
+  {
+    "name": "BoatName",
+    "capacity": 5,
+    "costPerDay": 100.5,
+    "isAvailable": true,
+    "boatId": 9
+  }
+]

@@ -38,7 +38,7 @@ public class JSONParserReservation {
     public static boolean saveReservationInDatabase(List<Reservation> reservationList) {
         try {
             ObjectMapper objectMapper = new ObjectMapper();
-            objectMapper.writeValue(new File(RESERVATION_JSON_FILE_PATH), reservationList);
+            objectMapper.writerWithDefaultPrettyPrinter().writeValue(new File(RESERVATION_JSON_FILE_PATH), reservationList);
             return true;
         } catch (IOException e) {
             return false;
