@@ -11,31 +11,28 @@ import java.util.Map;
 import static pl.isa.alphateam.JSONParserCustomer.saveCustomerInDatabase;
 
 public class CustomerDataCenter {
-    private static final Map<Map<String, String>, Customer> loginMap = new HashMap<>();
-
-
-    public static void updateMap(Customer customer) {
-        Map<String, String> loginDetails = new HashMap<>();
-        loginDetails.put(customer.getEmailAddress(), customer.getPassword());
-        loginMap.put(loginDetails, customer);
-
-    }
+    private static final Map<Map<String, String>, Customer> loginMap = getLoginMap();
 
     public static Map<Map<String, String>, Customer> getLoginMap() {
         Map<Map<String, String>, Customer> customerLoginDetails = new HashMap<>();
-        var customerList = JSONParserCustomer.customersList;
-        for (Customer customer : customerList) {
-            Map<String, String> login = new HashMap<>();
-            login.put(customer.getEmailAddress(), customer.getPassword());
-            customerLoginDetails.put(login, customer);
+        try{
+            var customerList = JSONParserCustomer.getCustomers1();
+            for (Customer customer : customerList) {
+                Map<String, String> login = new HashMap<>();
+                login.put(customer.getEmailAddress(), customer.getPassword());
+                customerLoginDetails.put(login, customer);
+            }
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
+
         return customerLoginDetails;
     }
 
     public static void createNewCustomerRecord(Map<String, String> customerData) {
         Address address = new Address(customerData.get("country"), customerData.get("city"), customerData.get("streetName"), Integer.parseInt(customerData.get("streetNumber")));
         Customer customer = new Customer(customerData.get("firstName"),
-                customerData.get("secondName"),
+                customerData.get("lastName"),
                 customerData.get("birthdayDate"),
                 customerData.get("patentNo"),
                 address,

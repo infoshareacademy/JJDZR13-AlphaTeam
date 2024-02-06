@@ -35,7 +35,7 @@ public class JSONParserCustomer {
         throw new IllegalStateException("Utility class");
     }
 
-    public static List<Customer> getListOfCustomersFromDatabase() throws IOException {
+/*    public static List<Customer> getListOfCustomersFromDatabase() throws IOException {
         try {
             byte[] data = Files.readAllBytes(Path.of(CUSTOMERS_JSON_FILE_PATH));
             ObjectMapper objectMapper = new ObjectMapper();
@@ -53,10 +53,10 @@ public class JSONParserCustomer {
         } catch (IOException e) {
             return new ArrayList<>();
         }
-    }
+    }*/
 
 
-    //https://www.tutorialspoint.com/how-to-read-parse-json-array-using-java#:~:text=%2F%2FParsing%20the%20contents%20of,using%20the%20get()%20method.
+
     public static boolean saveCustomerInDatabase(List<Customer> customerList) {
         try {
             ObjectMapper objectMapper = new ObjectMapper();
@@ -81,7 +81,7 @@ public class JSONParserCustomer {
         return null;
     }
 
-    public static Customer[] getCustomers2() throws IOException {
+/*    public static Customer[] getCustomers2() throws IOException {
         Gson gson = new Gson();
         File file = new File(CUSTOMERS_JSON_FILE_PATH);
         if (file.exists()) {
@@ -97,7 +97,7 @@ public class JSONParserCustomer {
         FileWriter fileWriter= new FileWriter(CUSTOMERS_JSON_FILE_PATH_2);
         gson.toJson(customersList, fileWriter);
         fileWriter.close();
-    }
+    }*/
 
 
 }

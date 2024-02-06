@@ -1,13 +1,13 @@
-import pl.isa.alphateam.Address;
-import pl.isa.alphateam.Customer;
-import pl.isa.alphateam.CustomerDataCenter;
-import pl.isa.alphateam.JSONParserCustomer;
+import pl.isa.alphateam.*;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import static pl.isa.alphateam.JSONParserBoat.getListOfBoatsFromDatabase;
+import static pl.isa.alphateam.JSONParserBoat.saveBoatInDatabase;
 
 public class MainBasia {
     public static void main(String[] args) throws IOException {
@@ -17,9 +17,9 @@ public class MainBasia {
         }
 
         boolean written = saveBoatInDatabase(boats);
-        System.out.println(written);
+        System.out.println(written);*/
 
-        Menu.printMainPanelMenu();*/
+     //   Menu.printMainPanelMenu();
 //////////////////////////
     /*    List<Customer> customers = new ArrayList<>();
         customers= JSONParserCustomer.getCustomers1();
@@ -46,14 +46,23 @@ public class MainBasia {
 
         for (Customer customer : customersList) {
             System.out.println(customer);
-            Map<String, String> login = new HashMap<>();
+ /*           Map<String, String> login = new HashMap<>();
             login.put(customer.getFirstName(), customer.getPassword());
-            customerLoginDetails.put(login, customer);
+            customerLoginDetails.put(login, customer);*/
         }
 
         Map<String, String> loginDetails = new HashMap<>();
         loginDetails.put("email", "pass");
-        Customer customer = CustomerDataCenter.getLoginMap().get(loginDetails);
+
+
+        /////////////////////////////
+/*        Customer kasia = new Customer("Hope", "Z.", "23/10/11", "1254", new Address("Kraj","Miasto","Ulica",13), "kasie@email.com", "kasiaPass");
+
+        List<Reservation> reservationList = JSONParserReservation.getListOfReservationsFromDatabase();
+        for (Reservation reservation : reservationList) {
+            System.out.println(reservation);
+        }
+        JSONParserReservation.saveReservationInDatabase(reservationList);*/
     }
 
 }

@@ -2,12 +2,13 @@ package pl.isa.alphateam;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+import org.apache.commons.io.IOUtils;
 
 
-import java.io.File;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
+import java.lang.reflect.Type;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.time.LocalDate;
@@ -25,7 +26,7 @@ public class JSONParserReservation {
         throw new IllegalStateException("Utility class");
     }
 
-    public static List<Reservation> getListOfReservationsFromDatabase() {
+/*    public static List<Reservation> getListOfReservationsFromDatabase() {
         try {
             byte[] data = Files.readAllBytes(Path.of(RESERVATION_JSON_FILE_PATH));
             ObjectMapper objectMapper = new ObjectMapper();
@@ -33,7 +34,7 @@ public class JSONParserReservation {
         } catch (IOException e) {
             return new ArrayList<>();
         }
-    }
+    }*/
 
     public static boolean saveReservationInDatabase(List<Reservation> reservationList) {
         try {
@@ -44,5 +45,22 @@ public class JSONParserReservation {
             return false;
         }
     }
+    public static List<Reservation> getListOfReservationsFromDatabase() {
+
+        try {
+            InputStream inputStream = new FileInputStream(RESERVATION_JSON_FILE_PATH);
+            String json = IOUtils.toString(inputStream);
+            Type listType = new TypeToken<ArrayList<Reservation>>() {
+            }.getType();
+            return new Gson().fromJson(json, listType);
+        } catch (IOException e) {
+            System.out.println("xxxx");
+        }
+        return null;
+    }
+
+
+
+
 
 }

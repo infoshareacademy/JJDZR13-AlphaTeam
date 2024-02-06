@@ -17,7 +17,7 @@ public class Reservation {
     private String reservationCode = "";
 
     public Reservation() {
-        this.reservationCode = generateId();
+      //  this.reservationCode = generateId();
     }
 
     public Reservation(LocalDate startDate, LocalDate endDate, Customer customer, Boat boat) {
@@ -25,7 +25,7 @@ public class Reservation {
         this.endDate = endDate;
         this.customer = customer;
         this.boat = boat;
-//        this.reservationCode = generateId();
+       this.reservationCode = generateId();
     }
 
     @Override
