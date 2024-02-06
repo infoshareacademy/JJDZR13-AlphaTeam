@@ -1,0 +1,29 @@
+[ {
+  "firstName" : "Klaudia ",
+  "lastName" : "Senator",
+  "birthdayDate" : "1999-09-10",
+  "phoneNumber" : "22233355",
+  "patentNo" : "1234",
+  "address" : {
+    "country" : "Polska",
+    "city" : "Łódź",
+    "street" : "Kilińskiego",
+    "streetNo" : 180
+  },
+  "emailAddress" : "klaudiasenator10@gmail.com",
+  "password" : "drowssap"
+}, {
+  "firstName" : "Ola",
+  "lastName" : "Kot",
+  "birthdayDate" : "1990-01-01",
+  "phoneNumber" : "123456789",
+  "patentNo" : "345",
+  "address" : {
+    "country" : "Polska",
+    "city" : "Warszawa",
+    "street" : "Chmielna",
+    "streetNo" : 1
+  },
+  "emailAddress" : "ola.kot@gmail.com",
+  "password" : "piesek1"
+} ]

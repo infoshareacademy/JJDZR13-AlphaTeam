@@ -19,7 +19,7 @@ public class MainMichal {
         Boat boatM = new Boat("Falcon", 10, 150, true, 777);
 
         Customer customerM = new Customer("Michal", "Skoczylas", "1996-01-22",
-                "123456", addressM, "m.skoczylas1996@gmail.com", "babajaga");
+                "12345678", "12345", addressM, "m.skoczylas1996@gmail.com", "babajaga");
 
         Reservation reservationM = new Reservation(LocalDate.of(2024, 02, 02),
                 LocalDate.of(2024, 02, 05), customerM, boatM);

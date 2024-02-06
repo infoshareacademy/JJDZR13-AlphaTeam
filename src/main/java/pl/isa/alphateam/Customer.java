@@ -1,32 +1,32 @@
 package pl.isa.alphateam;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Calendar;
 
 public class Customer {
     private String firstName;
     private String lastName;
     private String birthdayDate;
-
+    private String phoneNumber;
     private String patentNo;
-
     private Address address;
     private String emailAddress;
     private String password;
-    public Customer() {
 
+    public Customer(){
     }
-
-    public Customer(String firstName, String lastName, String birthdayDate, String patentNo, Address address, String emailAddress, String password) {
+    public Customer(String firstName, String lastName, String birthdayDate, String phoneNumber, String patentNo, Address address, String emailAddress, String password) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.birthdayDate = birthdayDate;
+        this.phoneNumber = phoneNumber;
         this.patentNo = patentNo;
         this.address = address;
         this.emailAddress = emailAddress;
         this.password = password;
     }
-
-
 
     public String getFirstName() {
         return firstName;
@@ -47,9 +47,28 @@ public class Customer {
     public String getBirthdayDate() {
         return birthdayDate;
     }
-
-    public void setBirthdayDate(String birthdayDate) {
-        this.birthdayDate = birthdayDate;
+    public void setBirthdayDate() { this.birthdayDate = birthdayDate; }
+    static int calculateAge(String birthdayDate) {
+        try {
+            Date birthDate = new SimpleDateFormat("yyyy-MM-dd").parse(birthdayDate); //parsuje - zmienia format na Date
+            Calendar dob = Calendar.getInstance();
+            dob.setTime(birthDate);
+            Calendar today = Calendar.getInstance(); //obiekt Calendar reprezentujący dzisiejszą datę
+            int age = today.get(Calendar.YEAR) - dob.get(Calendar.YEAR); //oblcza różnicę między rokiem urodzenia a dzisiejszym dniem i przypisuje do zmiennej age
+            if (today.get(Calendar.DAY_OF_YEAR) < dob.get(Calendar.DAY_OF_YEAR)) {
+                age--;
+            }
+            return age;
+        } catch (ParseException e) {
+            e.printStackTrace();
+            return -1;
+        }
+    }
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 
     public String getPatentNo() {
@@ -90,6 +109,7 @@ public class Customer {
                 "firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", birthdayDate='" + birthdayDate + '\'' +
+                ", phoneNumber= '" + phoneNumber + '\'' +
                 ", patentNo='" + patentNo + '\'' +
                 ", address=" + address +
                 ", emailAddress='" + emailAddress + '\'' +

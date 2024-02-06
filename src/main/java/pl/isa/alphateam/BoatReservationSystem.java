@@ -26,7 +26,7 @@ public class BoatReservationSystem {
 ////
 //        Boat boat = new Boat("FalconGGGG", 10, 150, true, 7778);
         Customer customer = new Customer("MichalNNN", "Skoczylas", "1996-01-22",
-                "123456", addressM, "m.skoczylas1996@gmail.com", "babajaga");
+                "123456", "1235", addressM, "m.skoczylas1996@gmail.com", "babajaga");
 
 
         // Wprowadzanie danych przez użytkownika
