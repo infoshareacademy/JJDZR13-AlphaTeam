@@ -28,16 +28,6 @@ public class Reservation {
        this.reservationCode = generateId();
     }
 
-    @Override
-    public String toString() {
-        return "Reservation{" +
-                "startDate='" + startDate + '\'' +
-                ", endDate=" + endDate +
-                ", customer=" + customer +
-                ", boat='" + boat + '\'' +
-                '}';
-    }
-
 
     @JsonProperty("startDate")
     public String getStartDateProperty() {
@@ -51,6 +41,16 @@ public class Reservation {
     @JsonProperty("endDate")
     public String getEndDateProperty() {
         return endDate.toString();
+    }
+
+    @Override
+    public String toString() {
+        return "Reservation{" +
+                "startDate='" + startDate + '\'' +
+                ", endDate=" + endDate +
+                ", customer=" + customer +
+                ", boat='" + boat + '\'' +
+                '}';
     }
 
 

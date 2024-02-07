@@ -1,30 +1,54 @@
 [ {
   "customer" : {
-    "firstName" : "Leosia",
-    "lastName" : "Z.",
-    "birthdayDate" : "23/10/11",
-    "patentNo" : "1254",
+    "firstName" : "Michal",
+    "lastName" : "Skoczylas",
+    "birthdayDate" : "1996-01-22",
+    "patentNo" : "123456",
     "address" : {
-      "country" : "Kraj",
-      "city" : "Miasto",
-      "street" : "Ulica",
-      "streetNo" : 13
+      "country" : "Polska",
+      "city" : "Łódź",
+      "street" : "Hetmańska",
+      "streetNo" : 10
     },
-    "emailAddress" : "kasie@email.com",
-    "password" : "kasiaPass"
+    "emailAddress" : "m.skoczylas1996@gmail.com",
+    "password" : "babajaga"
   },
   "boat" : {
-    "name" : "BoatName",
-    "capacity" : 5,
-    "costPerDay" : 100.5,
+    "name" : "Banana Boat",
+    "capacity" : 12,
+    "costPerDay" : 251.2,
     "isAvailable" : true,
-    "boatId" : 1
+    "boatId" : 2
   },
-  "startDate" : "2024-01-05",
-  "endDate" : "2024-01-07"
+  "endDate" : "2024-01-15",
+  "startDate" : "2024-01-01"
 }, {
   "customer" : {
-    "firstName" : "Tosia",
+    "firstName" : "Michal",
+    "lastName" : "Skoczylas",
+    "birthdayDate" : "1996-01-22",
+    "patentNo" : "123456",
+    "address" : {
+      "country" : "Polska",
+      "city" : "Łódź",
+      "street" : "Hetmańska",
+      "streetNo" : 10
+    },
+    "emailAddress" : "m.skoczylas1996@gmail.com",
+    "password" : "babajaga"
+  },
+  "boat" : {
+    "name" : "Cruise Ship",
+    "capacity" : 1200,
+    "costPerDay" : 36541.2,
+    "isAvailable" : true,
+    "boatId" : 3
+  },
+  "endDate" : "2024-01-31",
+  "startDate" : "2024-01-01"
+}, {
+  "customer" : {
+    "firstName" : "Hope",
     "lastName" : "Z.",
     "birthdayDate" : "23/10/11",
     "patentNo" : "1254",
@@ -34,16 +58,16 @@
       "street" : "Ulica",
       "streetNo" : 13
     },
-    "emailAddress" : "kasie@email.com",
-    "password" : "kasiaPass"
+    "emailAddress" : "email",
+    "password" : "pass"
   },
   "boat" : {
-    "name" : "BoatName",
-    "capacity" : 5,
-    "costPerDay" : 100.5,
+    "name" : "Banana Boat",
+    "capacity" : 12,
+    "costPerDay" : 251.2,
     "isAvailable" : true,
-    "boatId" : 1
+    "boatId" : 2
   },
-  "startDate" : "2024-01-05",
-  "endDate" : "2024-01-07"
+  "endDate" : "2024-01-17",
+  "startDate" : "2024-01-16"
 } ]

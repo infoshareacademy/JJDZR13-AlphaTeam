@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Map;
 
 
+
 import static pl.isa.alphateam.JSONParserCustomer.saveCustomerInDatabase;
 
 public class CustomerDataCenter {
@@ -15,7 +16,7 @@ public class CustomerDataCenter {
 
     public static Map<Map<String, String>, Customer> getLoginMap() {
         Map<Map<String, String>, Customer> customerLoginDetails = new HashMap<>();
-        try{
+        try {
             var customerList = JSONParserCustomer.getCustomers1();
             for (Customer customer : customerList) {
                 Map<String, String> login = new HashMap<>();
@@ -30,7 +31,11 @@ public class CustomerDataCenter {
     }
 
     public static void createNewCustomerRecord(Map<String, String> customerData) {
-        Address address = new Address(customerData.get("country"), customerData.get("city"), customerData.get("streetName"), Integer.parseInt(customerData.get("streetNumber")));
+        Address address = new Address(customerData.get("country"),
+                customerData.get("city"),
+                customerData.get("streetName"),
+                Integer.parseInt(customerData.get("streetNumber")));
+
         Customer customer = new Customer(customerData.get("firstName"),
                 customerData.get("lastName"),
                 customerData.get("birthdayDate"),
@@ -49,7 +54,19 @@ public class CustomerDataCenter {
         }
         customerList.add(customer);
         saveCustomerInDatabase(customerList);
+    }
 
-
+    public static boolean checkIfEmailExists(String email) {
+        try {
+            List<Customer> customerList = JSONParserCustomer.getCustomers1();
+            for (Customer customer:customerList) {
+                if (customer.getEmailAddress().equals(email)) {
+                    return true;
+                }
+            }
+        } catch (IOException e) {
+            System.out.println("We have problem with database");
+        }
+        return false;
     }
 }

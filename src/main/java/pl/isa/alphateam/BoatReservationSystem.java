@@ -1,47 +1,69 @@
 package pl.isa.alphateam;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.SerializationFeature;
 
-
+import java.time.Duration;
 import java.time.LocalDate;
 import java.util.*;
-import java.util.stream.Collectors;
 
 import static pl.isa.alphateam.JSONParserBoat.getListOfBoatsFromDatabase;
 
+import static pl.isa.alphateam.JSONParserReservation.getListOfReservationsFromFakeDatabase;
 import static pl.isa.alphateam.JSONParserReservation.saveReservationInDatabase;
 
 public class BoatReservationSystem {
     private static final Map<String, Reservation> reservationCodeMap = new HashMap<>();
-    private static final List<Reservation> reservations = new ArrayList<>();
-
-    public static Reservation reserveBoatFor24hrs( int boatID, LocalDate startDate, LocalDate endDate) {
-        Boat boat = getListOfBoatsFromDatabase().get(boatID);
-        Reservation reservation = new Reservation(startDate, endDate, null, boat);
-        String reservationCode = reservation.getReservationCode();
-        reservationCodeMap.put(reservationCode, reservation);
-        return reservation;
-    }
+    private static final List<Reservation> reservations = getListOfReservationsFromFakeDatabase();
 
     public static Reservation rentBoatWithReservationCode(String reservationCode) {
         return reservationCodeMap.get(reservationCode);
     }
 
     public static boolean rentBoatForCustomerReservationCodeRoute(Customer customer, Reservation reservation) {
-        reservation.setCustomer(customer);
-        return true;
+        try {
+            reservation.setCustomer(customer);
+            reservations.add(reservation);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+    public static Reservation reserveBoatFor24hrs(int boatID, LocalDate startDate, LocalDate endDate) {
+        Boat boat = getBoatBasedOnBoatID(boatID);
+        Reservation reservation = new Reservation(startDate, endDate, null, boat);
+        String reservationCode = reservation.getReservationCode();
+        reservationCodeMap.put(reservationCode, reservation);
+        return reservation;
     }
 
     public static Reservation rentBoatForCustomerNoReservationCode(LocalDate startDate, LocalDate endDate, Customer customer, int boatID) {
-        List<Boat> boats = getListOfBoatsFromDatabase();
-        Boat boat = boats.stream().filter(b -> b.getBoatId() == boatID).toList().get(0);
+        Boat boat = getBoatBasedOnBoatID(boatID);
         Reservation reservation = new Reservation(startDate, endDate, customer, boat);
         reservations.add(reservation);
         saveReservationInDatabase(reservations);
-
         return reservation;
     }
+
+    private static Boat getBoatBasedOnBoatID(int boatID) {
+        List<Boat> boats = getListOfBoatsFromDatabase();
+        return boats.stream().filter(b -> b.getBoatId() == boatID).toList().get(0);
+    }
+
+    public static List<LocalDate> checkIfBoatIsAvailable(int boatId) {
+        List<LocalDate> datesForBoat = new ArrayList<>();
+        for (Reservation reservation : reservations) {
+            if (reservation.getBoat().getBoatId() == boatId) {
+                LocalDate startDate = reservation.getStartDate();
+                LocalDate endDate = reservation.getEndDate();
+                long dayNo = Duration.between(startDate.atStartOfDay(), endDate.atStartOfDay()).toDays();
+                for (long i = 0; i <= dayNo; i++) {
+                    datesForBoat.add(startDate.plusDays(i));
+                }
+            }
+        }
+        return datesForBoat;
+    }
+
 }
 
 

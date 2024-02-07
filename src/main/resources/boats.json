@@ -14,7 +14,7 @@
   "name" : "Cruise Ship",
   "capacity" : 1200,
   "costPerDay" : 36541.2,
-  "isAvailable" : false,
+  "isAvailable" : true,
   "boatId" : 3
 }, {
   "name" : "Cable Ferry",
