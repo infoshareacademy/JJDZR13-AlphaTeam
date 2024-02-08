@@ -1,9 +1,13 @@
 package pl.isa.alphateam;
 
+import org.apache.commons.collections4.CollectionUtils;
+
 import java.time.Duration;
 import java.time.LocalDate;
 import java.util.*;
 import java.util.regex.Pattern;
+
+import static pl.isa.alphateam.ReservationUtils.getListOfDaysForPeriod;
 
 public class Menu {
     static Scanner scanner = new Scanner(System.in);
@@ -150,7 +154,25 @@ public class Menu {
         }
     }
 
-    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    public static void printYesNoMenu() {
+        System.out.println("""
+                                
+                Would like to exit?               
+                1. Yes
+                2. No
+                """);
+        int choice = getChosenMenuItem(2);
+
+        switch (choice) {
+            case 1 -> printMainPanelMenu();
+            case 2 -> System.out.println("ok");
+            default -> throw new IllegalStateException("Unexpected value: " + choice);
+        }
+    }
+
+///////////////////////////////////////////////////////////////////////////////  
+//MENU RELATED METHODS
+///////////////////////////////////////////////////////////////////////////////
 
     public static int getChosenMenuItem(int itemsInMenu) {
         System.out.print("Please provide your choice >");
@@ -210,7 +232,9 @@ public class Menu {
         return CustomerDataCenter.getLoginMap().get(loginDetails);
     }
 
-    ////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////  
+//RENTAL RELATED MESSAGES
+///////////////////////////////////////////////////////////////////////////////
 
     public static void confirmBoatRental(Customer customer, Reservation reservation) {
         System.out.println("""
@@ -235,7 +259,6 @@ public class Menu {
             default -> throw new IllegalStateException("Unexpected value: " + choice);
         }
     }
-    ////////////////////////////////////////////////////////////////////////////////////
 
     private static void printRentalInformation(Reservation reservation) {
 
@@ -248,7 +271,10 @@ public class Menu {
         System.out.println("*" + lineCost);
         System.out.println("*".repeat(60));
     }
-    ////////////////////////////////////////////////////////////////////////////////////
+
+///////////////////////////////////////////////////////////////////////////////  
+//BOAT RESERVATIONS AND RENTALS
+///////////////////////////////////////////////////////////////////////////////
 
     private static boolean rentABoatWithoutCode(Customer customer) {
         System.out.print("Enter boat id you would like to rent :");
@@ -258,39 +284,13 @@ public class Menu {
         getDaysNAforBoatId(boatId);
 
         LocalDate startDate = getStartDateAndValidateAgainstDaysAvailableForBoat(boatId);
-
         LocalDate endDate = getLocalDateInputFromUser(endDateRequest);
-        long daysNo = Duration.between(startDate.atStartOfDay(), endDate.atStartOfDay()).toDays();
-        boolean isFreeForFullPeriod = false;
 
-        while (!isFreeForFullPeriod) {
-            for (long i = 0; i <= daysNo; i++) {
-                if (checkIfBoatRentedOnThatDay(boatId, startDate.plusDays(i))) {
-                    System.out.println("Boat is already rented during the period");
-                    //TO DO
-                    break;
-                }
-                isFreeForFullPeriod = true;
-            }
-        }
+        endDate = getValidatedEndDateIncludingPeriodValidation(boatId, startDate, endDate);
 
-
-        while (checkIfBoatRentedOnThatDay(boatId, endDate)) {
-            System.out.println("Boat is not available on that day");
-            startDate = getLocalDateInputFromUser(endDateRequest);
-        }
         Reservation reservation = BoatReservationSystem.rentBoatForCustomerNoReservationCode(startDate, endDate, customer, boatId);
         printRentalInformation(reservation);
         return true;
-    }
-
-    private static LocalDate getStartDateAndValidateAgainstDaysAvailableForBoat(int boatId) {
-        LocalDate startDate = getLocalDateInputFromUser(startDateRequest);
-        while (checkIfBoatRentedOnThatDay(boatId, startDate)) {
-            System.out.println("Boat is not available on that day");
-            startDate = getLocalDateInputFromUser(startDateRequest);
-        }
-        return startDate;
     }
 
     private static void reserveBoatWithoutLogin() {
@@ -300,21 +300,57 @@ public class Menu {
 
         getDaysNAforBoatId(boatId);
 
-        LocalDate startDate = getLocalDateInputFromUser(startDateRequest);
+        LocalDate startDate = getStartDateAndValidateAgainstDaysAvailableForBoat(boatId);
         LocalDate endDate = getLocalDateInputFromUser(endDateRequest);
 
+        endDate = getValidatedEndDateIncludingPeriodValidation(boatId, startDate, endDate);
+
+        Reservation reservation = BoatReservationSystem.reserveBoatFor24hrs(boatId, startDate, endDate);
+        System.out.print("\nYour reservation code is * " + reservation.getReservationCode() + " * and is valid for 24 hrs\n");
+        System.out.print("Create/Login to your account in order to rent a boat");
+    }
+
+
+///////////////////////////////////////////////////////////////////////////////
+//RE LOCAL DATES CHECKS AND VALIDATIONS
+///////////////////////////////////////////////////////////////////////////////
+
+    private static LocalDate getValidatedEndDateIncludingPeriodValidation(int boatId, LocalDate startDate, LocalDate endDate) {
         while (endDate.isBefore(startDate)) {
             System.out.println("End date is before than start date, try again");
             endDate = getLocalDateInputFromUser(endDateRequest);
         }
 
-        Reservation reservation = BoatReservationSystem.reserveBoatFor24hrs(boatId, startDate, endDate);
-        System.out.print("Your reservation code is * " + reservation.getReservationCode() + " * is valid for 24 hrs\n");
-        System.out.print("Create/Login to your account in order to rent a boat");
+        List<LocalDate> datesForBoat = getListOfDaysForPeriod(startDate, endDate);
+        validateIfSelectedPeriodIsAvailableForRent(datesForBoat, BoatReservationSystem.getListOFDatesNAforBoatId(boatId));
+        return endDate;
+    }
+
+    private static void validateIfSelectedPeriodIsAvailableForRent(List<LocalDate> datesForBoat, List<LocalDate> listOFDatesNAforBoatId) {
+        LocalDate startDate = datesForBoat.get(0);
+        LocalDate endDate = datesForBoat.get(datesForBoat.size() - 1);
+        while (CollectionUtils.containsAny(datesForBoat, listOFDatesNAforBoatId)) {
+            System.out.println("Boat for period from " + startDate.toString() + " until " + endDate.toString() + " is not available for rental");
+            printYesNoMenu();
+            endDate = getLocalDateInputFromUser(endDateRequest);
+            datesForBoat = getListOfDaysForPeriod(startDate, endDate);
+        }
+        System.out.println("Boat for period from " + startDate.toString() + " until " + endDate.toString() + " is available for rental");
+    }
+
+    private static LocalDate getStartDateAndValidateAgainstDaysAvailableForBoat(int boatId) {
+
+        LocalDate startDate = getLocalDateInputFromUser(startDateRequest);
+
+        while (checkIfBoatRentedOnThatDay(boatId, startDate)) {
+            System.out.println("Boat is not available on that day");
+            startDate = getLocalDateInputFromUser(startDateRequest);
+        }
+        return startDate;
     }
 
     private static void getDaysNAforBoatId(int boatId) {
-        List<LocalDate> dates = BoatReservationSystem.checkIfBoatIsAvailable(boatId);
+        List<LocalDate> dates = BoatReservationSystem.getListOFDatesNAforBoatId(boatId);
         if (!dates.isEmpty()) {
             System.out.println("Currently this boat is no available on ");
             dates.stream().map(d -> d.toString() + ", ").forEach(System.out::print);
@@ -323,7 +359,7 @@ public class Menu {
     }
 
     private static boolean checkIfBoatRentedOnThatDay(int boatId, LocalDate date) {
-        List<LocalDate> dates = BoatReservationSystem.checkIfBoatIsAvailable(boatId);
+        List<LocalDate> dates = BoatReservationSystem.getListOFDatesNAforBoatId(boatId);
         return dates.contains(date);
     }
 
@@ -349,6 +385,9 @@ public class Menu {
 
     }
 
+///////////////////////////////////////////////////////////////////////////////
+//EMAIL VERIFICATION    
+///////////////////////////////////////////////////////////////////////////////
     private static String verifyEmailAddressIfExists(String email) {
         boolean ifEmailExist = CustomerDataCenter.checkIfEmailExists(email);
         while (ifEmailExist) {

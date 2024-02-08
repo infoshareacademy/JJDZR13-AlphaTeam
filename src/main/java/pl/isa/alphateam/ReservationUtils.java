@@ -1,8 +1,8 @@
 package pl.isa.alphateam;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
+import java.time.Duration;
+import java.time.LocalDate;
+import java.util.*;
 
 public class ReservationUtils {
     private static final Scanner scanner = new Scanner(System.in);
@@ -14,19 +14,14 @@ public class ReservationUtils {
         return PREFIX + postfix+count;
     }
 
-/*    public static boolean enterYourReservationCode(Reservation reservation) {
-        String userInput = scanner.next();
-       if (!reservationCodeStartCountMap.containsValue(userInput)) {
-            System.out.println("Incorrect code, try again");
-            enterYourReservationCode(reservation);
-        } else {
-            reservationCodeStartCountMap.remove(reservation.getReservationCode());
-            System.out.println("Your code was accepted and you successfully rented a boat");
-            return true;
+    public static List<LocalDate> getListOfDaysForPeriod(LocalDate startDate, LocalDate endDate) {
+        long daysNo = Duration.between(startDate.atStartOfDay(), endDate.atStartOfDay()).toDays();
+        List<LocalDate> listOfDayesInPeriod = new ArrayList<>();
+        for (long i = 0; i <= daysNo; i++) {
+            listOfDayesInPeriod.add(startDate.plusDays(i));
         }
-        return false;
-    }*/
-
+        return listOfDayesInPeriod;
+    }
 
 
 }

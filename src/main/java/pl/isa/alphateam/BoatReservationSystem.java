@@ -9,6 +9,7 @@ import static pl.isa.alphateam.JSONParserBoat.getListOfBoatsFromDatabase;
 
 import static pl.isa.alphateam.JSONParserReservation.getListOfReservationsFromFakeDatabase;
 import static pl.isa.alphateam.JSONParserReservation.saveReservationInDatabase;
+import static pl.isa.alphateam.ReservationUtils.getListOfDaysForPeriod;
 
 public class BoatReservationSystem {
     private static final Map<String, Reservation> reservationCodeMap = new HashMap<>();
@@ -49,16 +50,19 @@ public class BoatReservationSystem {
         return boats.stream().filter(b -> b.getBoatId() == boatID).toList().get(0);
     }
 
-    public static List<LocalDate> checkIfBoatIsAvailable(int boatId) {
+    public static List<LocalDate> getListOFDatesNAforBoatId(int boatId) {
         List<LocalDate> datesForBoat = new ArrayList<>();
         for (Reservation reservation : reservations) {
             if (reservation.getBoat().getBoatId() == boatId) {
                 LocalDate startDate = reservation.getStartDate();
                 LocalDate endDate = reservation.getEndDate();
-                long dayNo = Duration.between(startDate.atStartOfDay(), endDate.atStartOfDay()).toDays();
+
+                datesForBoat= getListOfDaysForPeriod(startDate, endDate);
+
+            /*    long dayNo = Duration.between(startDate.atStartOfDay(), endDate.atStartOfDay()).toDays();
                 for (long i = 0; i <= dayNo; i++) {
                     datesForBoat.add(startDate.plusDays(i));
-                }
+                }*/
             }
         }
         return datesForBoat;
