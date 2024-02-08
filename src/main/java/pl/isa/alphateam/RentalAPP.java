@@ -1,6 +1,6 @@
 package pl.isa.alphateam;
 
-public class RentalApp {
+public class RentalAPP {
     public static void main(String[] args) {
         Menu.printMainPanelMenu();
     }

@@ -7,13 +7,13 @@ import java.util.*;
 
 import static pl.isa.alphateam.JSONParserBoat.getListOfBoatsFromDatabase;
 
-import static pl.isa.alphateam.JSONParserReservation.getListOfReservationsFromFakeDatabase;
-import static pl.isa.alphateam.JSONParserReservation.saveReservationInDatabase;
+import static pl.isa.alphateam.JSONParserReservation.*;
 import static pl.isa.alphateam.ReservationUtils.getListOfDaysForPeriod;
 
 public class BoatReservationSystem {
     private static final Map<String, Reservation> reservationCodeMap = new HashMap<>();
-    private static final List<Reservation> reservations = getListOfReservationsFromFakeDatabase();
+   private static final List<Reservation> reservations = getListOfReservationsFromFakeDatabase();
+   // private static List<Reservation> reservations = getListOfReservationsFromDatabase();
 
     public static Reservation rentBoatWithReservationCode(String reservationCode) {
         return reservationCodeMap.get(reservationCode);
@@ -37,7 +37,7 @@ public class BoatReservationSystem {
         return reservation;
     }
 
-    public static Reservation rentBoatForCustomerNoReservationCode(LocalDate startDate, LocalDate endDate, Customer customer, int boatID) {
+    public static Reservation rentBoatForCustomer(LocalDate startDate, LocalDate endDate, Customer customer, int boatID) {
         Boat boat = getBoatBasedOnBoatID(boatID);
         Reservation reservation = new Reservation(startDate, endDate, customer, boat);
         reservations.add(reservation);
@@ -58,16 +58,20 @@ public class BoatReservationSystem {
                 LocalDate endDate = reservation.getEndDate();
 
                 datesForBoat= getListOfDaysForPeriod(startDate, endDate);
-
-            /*    long dayNo = Duration.between(startDate.atStartOfDay(), endDate.atStartOfDay()).toDays();
-                for (long i = 0; i <= dayNo; i++) {
-                    datesForBoat.add(startDate.plusDays(i));
-                }*/
             }
         }
         return datesForBoat;
     }
 
+    public static List<Reservation> getListOfReservationsForCustomer(Customer customer) {
+        List<Reservation> reservationListForCustomer = new ArrayList<>();
+        for (Reservation reservation : reservations) {
+            if (reservation.getCustomer().equals(customer)) {
+                reservationListForCustomer.add(reservation);
+            }
+        }
+        return reservationListForCustomer;
+    }
 }
 
 

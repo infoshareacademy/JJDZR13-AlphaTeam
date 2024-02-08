@@ -26,7 +26,7 @@ public class JSONParserReservation {
         throw new IllegalStateException("Utility class");
     }
 
-/*    public static List<Reservation> getListOfReservationsFromDatabase() {
+    public static List<Reservation> getListOfReservationsFromDatabase() {
         try {
             byte[] data = Files.readAllBytes(Path.of(RESERVATION_JSON_FILE_PATH));
             ObjectMapper objectMapper = new ObjectMapper();
@@ -34,7 +34,7 @@ public class JSONParserReservation {
         } catch (IOException e) {
             return new ArrayList<>();
         }
-    }*/
+    }
 
     public static boolean saveReservationInDatabase(List<Reservation> reservationList) {
         try {
@@ -45,7 +45,7 @@ public class JSONParserReservation {
             return false;
         }
     }
-    public static List<Reservation> getListOfReservationsFromDatabase() {
+  /*  public static List<Reservation> getListOfReservationsFromDatabase() {
 
         try {
             InputStream inputStream = new FileInputStream(RESERVATION_JSON_FILE_PATH);
@@ -57,7 +57,7 @@ public class JSONParserReservation {
             System.out.println("xxxx");
         }
         return null;
-    }
+    }*/
     public static List<Reservation> getListOfReservationsFromFakeDatabase(){
     Address addressM = new Address("Polska", "Łódź", "Hetmańska", 10);
     Boat boatM = new Boat("Banana Boat", 12, 251.2, true, 2);

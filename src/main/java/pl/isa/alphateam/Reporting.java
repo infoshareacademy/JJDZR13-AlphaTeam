@@ -13,7 +13,7 @@ public class Reporting {
 
         for (Boat boat:boats) {
             if (boat.getIsAvailable()) {
-                System.out.printf("id: %d Boat: name= %s, capacity= %d, costPerDay= %f %n", boat.getBoatId(),
+                System.out.printf("id: %d Boat: name= %-15s, capacity= %5d, costPerDay= %7.2f %n", boat.getBoatId(),
                         boat.getName(),boat.getCapacity(), boat.getCostPerDay());
                 i++;
             }
