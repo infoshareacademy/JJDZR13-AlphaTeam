@@ -416,16 +416,16 @@ public class Menu {
 
     private static LocalDate validateBirthdayDate18yearsAndFuture(LocalDate birthdayDate) {
         LocalDate currentDate = LocalDate.now();
-        long yearsNo = Duration.between(birthdayDate.atStartOfDay(), currentDate.atStartOfDay()).toDays()/365;
-        while (yearsNo < 18) {
-            if (yearsNo < 0) {
+        LocalDate date18YearsBack = currentDate.minusYears(18);
+        while (birthdayDate.isAfter(date18YearsBack)) {
+            if (birthdayDate.isAfter(currentDate)) {
                 System.out.println("This is future date");
             } else {
                 System.out.println("Sorry, you must be aged 18 or above to rent a boat");
             }
             printYesNoMenu();
             birthdayDate = getLocalDateInputFromUser("Please provide your birthday date (yyyy-mm-dd) >");
-            yearsNo = Duration.between(birthdayDate.atStartOfDay(), currentDate.atStartOfDay()).toDays()/365;
+
         }
         return birthdayDate;
     }

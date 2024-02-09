@@ -20,9 +20,10 @@ public class BoatReservationSystem {
     }
 
     public static boolean rentBoatForCustomerReservationCodeRoute(Customer customer, Reservation reservation) {
+        List<Reservation> reservationList = new ArrayList<>(getListOfReservationsFromDatabase());
         try {
             reservation.setCustomer(customer);
-            reservations.add(reservation);
+            reservationList.add(reservation);
             return true;
         } catch (Exception e) {
             return false;
@@ -39,9 +40,10 @@ public class BoatReservationSystem {
 
     public static Reservation rentBoatForCustomer(LocalDate startDate, LocalDate endDate, Customer customer, int boatID) {
         Boat boat = getBoatBasedOnBoatID(boatID);
+        List<Reservation> reservationList = new ArrayList<>(getListOfReservationsFromDatabase());
         Reservation reservation = new Reservation(startDate, endDate, customer, boat);
-        reservations.add(reservation);
-        saveReservationInDatabase(reservations);
+        reservationList.add(reservation);
+        saveReservationInDatabase(reservationList);
         return reservation;
     }
 
@@ -52,7 +54,8 @@ public class BoatReservationSystem {
 
     public static List<LocalDate> getListOFDatesNAforBoatId(int boatId) {
         List<LocalDate> datesForBoat = new ArrayList<>();
-        for (Reservation reservation : reservations) {
+        List<Reservation> reservationList = new ArrayList<>(getListOfReservationsFromDatabase());;
+        for (Reservation reservation : reservationList) {
             if (reservation.getBoat().getBoatId() == boatId) {
                 LocalDate startDate = reservation.getStartDate();
                 LocalDate endDate = reservation.getEndDate();
@@ -65,8 +68,10 @@ public class BoatReservationSystem {
 
     public static List<Reservation> getListOfReservationsForCustomer(Customer customer) {
         List<Reservation> reservationListForCustomer = new ArrayList<>();
-        for (Reservation reservation : reservations) {
-            if (reservation.getCustomer().equals(customer)) {
+        List<Reservation> reservationList = new ArrayList<>(getListOfReservationsFromDatabase());;
+        for (Reservation reservation : reservationList) {
+
+            if (reservation.getCustomer().getEmailAddress().equals(customer.getEmailAddress())) {
                 reservationListForCustomer.add(reservation);
             }
         }

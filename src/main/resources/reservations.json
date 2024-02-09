@@ -20,8 +20,8 @@
     "isAvailable" : true,
     "boatId" : 2
   },
-  "endDate" : "2024-01-15",
-  "startDate" : "2024-01-01"
+  "startDate" : "2024-01-01",
+  "endDate" : "2024-01-15"
 }, {
   "customer" : {
     "firstName" : "Michal",
@@ -44,30 +44,174 @@
     "isAvailable" : true,
     "boatId" : 3
   },
-  "endDate" : "2024-01-31",
-  "startDate" : "2024-01-01"
+  "startDate" : "2024-01-01",
+  "endDate" : "2024-01-31"
 }, {
   "customer" : {
-    "firstName" : "Ola",
-    "lastName" : "Ole",
-    "birthdayDate" : "2000-01-01",
-    "patentNo" : "patentos",
+    "firstName" : "Basia",
+    "lastName" : "Name",
+    "birthdayDate" : "1990-02-02",
+    "patentNo" : "patnet",
     "address" : {
       "country" : "Kraj",
       "city" : "Miasto",
       "street" : "ulica",
-      "streetNo" : 7
+      "streetNo" : 4
     },
-    "emailAddress" : "olaEmail",
-    "password" : "olaPass"
+    "emailAddress" : "emailBasia",
+    "password" : "passBasia"
   },
   "boat" : {
-    "name" : "Gone Fishing",
+    "name" : "Cable Ferry",
     "capacity" : 25,
-    "costPerDay" : 10.0,
+    "costPerDay" : 21.3,
     "isAvailable" : true,
-    "boatId" : 7
+    "boatId" : 4
   },
-  "endDate" : "2024-02-07",
-  "startDate" : "2024-02-06"
+  "startDate" : "2024-05-01",
+  "endDate" : "2024-05-03"
+}, {
+  "customer" : {
+    "firstName" : "Imie",
+    "lastName" : "Skoczylas",
+    "birthdayDate" : "1996-01-22",
+    "patentNo" : "123456",
+    "address" : {
+      "country" : "Polska",
+      "city" : "Łódź",
+      "street" : "Hetmańska",
+      "streetNo" : 10
+    },
+    "emailAddress" : "m.skoczylas1996@gmail.com",
+    "password" : "babajaga"
+  },
+  "boat" : {
+    "name" : "Banana Boat",
+    "capacity" : 12,
+    "costPerDay" : 251.2,
+    "isAvailable" : true,
+    "boatId" : 2
+  },
+  "startDate" : "2024-01-01",
+  "endDate" : "2024-01-15"
+}, {
+  "customer" : {
+    "firstName" : "Basia",
+    "lastName" : "Name",
+    "birthdayDate" : "1990-02-02",
+    "patentNo" : "patnet",
+    "address" : {
+      "country" : "Kraj",
+      "city" : "Miasto",
+      "street" : "ulica",
+      "streetNo" : 4
+    },
+    "emailAddress" : "emailBasia",
+    "password" : "passBasia"
+  },
+  "boat" : {
+    "name" : "Neptune",
+    "capacity" : 8,
+    "costPerDay" : 200.5,
+    "isAvailable" : true,
+    "boatId" : 9
+  },
+  "startDate" : "2021-02-09",
+  "endDate" : "2021-02-13"
+}, {
+  "customer" : {
+    "firstName" : "Basia",
+    "lastName" : "Name",
+    "birthdayDate" : "1990-02-02",
+    "patentNo" : "patnet",
+    "address" : {
+      "country" : "Kraj",
+      "city" : "Miasto",
+      "street" : "ulica",
+      "streetNo" : 4
+    },
+    "emailAddress" : "emailBasia",
+    "password" : "passBasia"
+  },
+  "boat" : {
+    "name" : "Endless Summer",
+    "capacity" : 5,
+    "costPerDay" : 50.5,
+    "isAvailable" : true,
+    "boatId" : 8
+  },
+  "startDate" : "2024-01-01",
+  "endDate" : "2024-01-02"
+}, {
+  "customer" : {
+    "firstName" : "Basia",
+    "lastName" : "Name",
+    "birthdayDate" : "1990-02-02",
+    "patentNo" : "patnet",
+    "address" : {
+      "country" : "Kraj",
+      "city" : "Miasto",
+      "street" : "ulica",
+      "streetNo" : 4
+    },
+    "emailAddress" : "emailBasia",
+    "password" : "passBasia"
+  },
+  "boat" : {
+    "name" : "Canoe",
+    "capacity" : 7,
+    "costPerDay" : 6.54,
+    "isAvailable" : true,
+    "boatId" : 6
+  },
+  "startDate" : "2024-06-12",
+  "endDate" : "2024-06-13"
+}, {
+  "customer" : {
+    "firstName" : "New",
+    "lastName" : "Account",
+    "birthdayDate" : "2024-01-23",
+    "patentNo" : "patent",
+    "address" : {
+      "country" : "NewCountry",
+      "city" : "NewCity",
+      "street" : "NewStreet",
+      "streetNo" : 6
+    },
+    "emailAddress" : "newEmail",
+    "password" : "newPass"
+  },
+  "boat" : {
+    "name" : "Cable Ferry",
+    "capacity" : 25,
+    "costPerDay" : 21.3,
+    "isAvailable" : true,
+    "boatId" : 4
+  },
+  "startDate" : "2024-03-17",
+  "endDate" : "2024-03-18"
+}, {
+  "customer" : {
+    "firstName" : "New",
+    "lastName" : "Account",
+    "birthdayDate" : "2024-01-23",
+    "patentNo" : "patent",
+    "address" : {
+      "country" : "NewCountry",
+      "city" : "NewCity",
+      "street" : "NewStreet",
+      "streetNo" : 6
+    },
+    "emailAddress" : "newEmail",
+    "password" : "newPass"
+  },
+  "boat" : {
+    "name" : "Canoe",
+    "capacity" : 7,
+    "costPerDay" : 6.54,
+    "isAvailable" : true,
+    "boatId" : 6
+  },
+  "startDate" : "2024-12-31",
+  "endDate" : "2025-01-01"
 } ]

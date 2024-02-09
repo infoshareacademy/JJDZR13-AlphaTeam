@@ -45,19 +45,7 @@ public class JSONParserReservation {
             return false;
         }
     }
-  /*  public static List<Reservation> getListOfReservationsFromDatabase() {
 
-        try {
-            InputStream inputStream = new FileInputStream(RESERVATION_JSON_FILE_PATH);
-            String json = IOUtils.toString(inputStream);
-            Type listType = new TypeToken<ArrayList<Reservation>>() {
-            }.getType();
-            return new Gson().fromJson(json, listType);
-        } catch (IOException e) {
-            System.out.println("xxxx");
-        }
-        return null;
-    }*/
     public static List<Reservation> getListOfReservationsFromFakeDatabase(){
     Address addressM = new Address("Polska", "Łódź", "Hetmańska", 10);
     Boat boatM = new Boat("Banana Boat", 12, 251.2, true, 2);
@@ -79,9 +67,20 @@ public class JSONParserReservation {
         Reservation reservationN = new Reservation(LocalDate.parse(startdateN),
                 LocalDate.parse(endDateN), customerN, boatN);
 
+        Address addressB = new Address("Polska", "Miaso", "Ulica", 10);
+        Boat boatB = new Boat("Cable Ferry", 25, 21.3, true, 4);
+        Customer customerB = new Customer("Basia", "Name", "1996-01-22",
+                "123456", addressM, "emailBasia", "passBasia");
+        String startdateB = "2024-03-01";
+        String endDateB = "2024-03-15";
+
+        Reservation reservationB = new Reservation(LocalDate.parse(startdateB),
+                LocalDate.parse(endDateB), customerB, boatB);
+
         List<Reservation> reservationsList = new ArrayList<>();
         reservationsList.add(reservationM);
         reservationsList.add(reservationN);
+        reservationsList.add(reservationB);
         return reservationsList;
     }
 }
