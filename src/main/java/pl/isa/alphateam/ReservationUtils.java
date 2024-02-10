@@ -5,7 +5,6 @@ import java.time.LocalDate;
 import java.util.*;
 
 public class ReservationUtils {
-    private static final Scanner scanner = new Scanner(System.in);
     private static final String PREFIX = "Boat";
     private static int count = -1;
     public static String generateId()  {
@@ -16,11 +15,11 @@ public class ReservationUtils {
 
     public static List<LocalDate> getListOfDaysForPeriod(LocalDate startDate, LocalDate endDate) {
         long daysNo = Duration.between(startDate.atStartOfDay(), endDate.atStartOfDay()).toDays();
-        List<LocalDate> listOfDayesInPeriod = new ArrayList<>();
+        List<LocalDate> listOfDaysInPeriod = new ArrayList<>();
         for (long i = 0; i <= daysNo; i++) {
-            listOfDayesInPeriod.add(startDate.plusDays(i));
+            listOfDaysInPeriod.add(startDate.plusDays(i));
         }
-        return listOfDayesInPeriod;
+        return listOfDaysInPeriod;
     }
 
 

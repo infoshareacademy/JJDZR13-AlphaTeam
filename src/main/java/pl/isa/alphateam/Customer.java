@@ -17,8 +17,9 @@ public class Customer {
     private String emailAddress;
     private String password;
 
-    public Customer(){
+    public Customer() {
     }
+
     public Customer(String firstName, String lastName, String birthdayDate, String phoneNumber, String patentNo, Address address, String emailAddress, String password) {
         this.firstName = firstName;
         this.lastName = lastName;
@@ -49,7 +50,11 @@ public class Customer {
     public String getBirthdayDate() {
         return birthdayDate;
     }
-    public void setBirthdayDate() { this.birthdayDate = birthdayDate; }
+
+    public void setBirthdayDate() {
+        this.birthdayDate = birthdayDate;
+    }
+
     static int calculateAge(String birthdayDate) {
         try {
             Date birthDate = new SimpleDateFormat("yyyy-MM-dd").parse(birthdayDate); //parsuje - zmienia format na Date
@@ -66,9 +71,11 @@ public class Customer {
             return -1;
         }
     }
+
     public String getPhoneNumber() {
         return phoneNumber;
     }
+
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }

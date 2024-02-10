@@ -1,14 +1,10 @@
 package pl.isa.alphateam;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
-import org.apache.commons.io.IOUtils;
 
 
 import java.io.*;
-import java.lang.reflect.Type;
+
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.time.LocalDate;
@@ -16,7 +12,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import static pl.isa.alphateam.JSONParserBoat.BOAT_JSON_FILE_PATH;
 
 public class JSONParserReservation {
 
@@ -49,7 +44,7 @@ public class JSONParserReservation {
     public static List<Reservation> getListOfReservationsFromFakeDatabase(){
     Address addressM = new Address("Polska", "Łódź", "Hetmańska", 10);
     Boat boatM = new Boat("Banana Boat", 12, 251.2, true, 2);
-    Customer customerM = new Customer("Michal", "Skoczylas", "1996-01-22",
+    Customer customerM = new Customer("Michal", "Skoczylas", "1996-01-22","123456789",
             "123456", addressM, "m.skoczylas1996@gmail.com", "babajaga");
     String startdate = "2024-01-01";
     String endDate = "2024-01-15";
@@ -59,8 +54,8 @@ public class JSONParserReservation {
 
         Address addressN = new Address("Polska", "Łódź", "Hetmańska", 10);
         Boat boatN = new Boat("Cruise Ship", 1200, 36541.2, true, 3);
-        Customer customerN = new Customer("Michal", "Skoczylas", "1996-01-22",
-                "123456", addressM, "m.skoczylas1996@gmail.com", "babajaga");
+        Customer customerN = new Customer("Michal", "Skoczylas", "1996-01-22","123456789",
+                "123456", addressN, "m.skoczylas1996@gmail.com", "babajaga");
         String startdateN = "2024-01-01";
         String endDateN = "2024-01-31";
 
@@ -69,8 +64,8 @@ public class JSONParserReservation {
 
         Address addressB = new Address("Polska", "Miaso", "Ulica", 10);
         Boat boatB = new Boat("Cable Ferry", 25, 21.3, true, 4);
-        Customer customerB = new Customer("Basia", "Name", "1996-01-22",
-                "123456", addressM, "emailBasia", "passBasia");
+        Customer customerB = new Customer("Basia", "Name", "1996-01-22","123456789",
+                "123456", addressB, "emailBasia", "passBasia");
         String startdateB = "2024-03-01";
         String endDateB = "2024-03-15";
 

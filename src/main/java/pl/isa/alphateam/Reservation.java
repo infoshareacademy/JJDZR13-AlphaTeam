@@ -17,7 +17,7 @@ public class Reservation {
     private String reservationCode = "";
 
     public Reservation() {
-      //  this.reservationCode = generateId();
+
     }
 
     public Reservation(LocalDate startDate, LocalDate endDate, Customer customer, Boat boat) {
@@ -53,7 +53,6 @@ public class Reservation {
                 '}';
     }
 
-
     public void setEndDateProperty(String date) {
         this.endDate = LocalDate.parse(date);
     }
@@ -67,7 +66,6 @@ public class Reservation {
     public LocalDate getEndDate() {
         return endDate;
     }
-
 
     public void setEndDate(LocalDate endDate) {
         this.endDate = endDate;
@@ -91,10 +89,9 @@ public class Reservation {
 
     @JsonIgnore
     public Double getCostOfReservation() {
-        long dayNo = Duration.between(startDate.atStartOfDay(), endDate.atStartOfDay()).toDays();
+        long dayNo = Duration.between(startDate.atStartOfDay(), endDate.atStartOfDay()).toDays()+1;
         return boat.getCostPerDay() * dayNo;
     }
-
 
     @JsonIgnore
     public String getReservationCode() {

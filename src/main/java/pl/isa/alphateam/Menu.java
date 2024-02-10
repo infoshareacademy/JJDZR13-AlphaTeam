@@ -2,7 +2,6 @@ package pl.isa.alphateam;
 
 import org.apache.commons.collections4.CollectionUtils;
 
-import java.time.Duration;
 import java.time.LocalDate;
 import java.util.*;
 import java.util.regex.Pattern;
@@ -17,9 +16,9 @@ public class Menu {
     public static void printMainPanelMenu() {
         System.out.println("""
                                 
-                MAIN MENU                
+                MAIN MENU
                 1. Find boats
-                2. Login 
+                2. Login
                 3. Create Account
                 4. Exit     
                   
@@ -41,7 +40,7 @@ public class Menu {
     public static void printDisplayBoatsMenu() {
         System.out.println("""
                  
-                FIND BOATS MENU             
+                FIND BOATS MENU
                 1. List of available boats
                 2. Reserve a boat
                 3. Return to main panel
@@ -75,9 +74,12 @@ public class Menu {
         System.out.print("Please provide your last name: >");
         customerData.put("lastName", scanner.next());
         LocalDate birthdayDate = getLocalDateInputFromUser("Please provide your birthday date (yyyy-mm-dd) >");
-        LocalDate validatedBirthdayDate =validateBirthdayDate18yearsAndFuture(birthdayDate);
-
+        LocalDate validatedBirthdayDate = validateBirthdayDate18yearsAndFuture(birthdayDate);
         customerData.put("birthdayDate", validatedBirthdayDate.toString());
+
+        System.out.print("Please provide your phoneNumber: >");
+        customerData.put("phoneNumber", scanner.next());
+
         System.out.print("Please provide your patent reference: >");
         customerData.put("patentNo", scanner.next());
         System.out.print("Please provide your address - country  >");
@@ -103,7 +105,7 @@ public class Menu {
     public static void printLoginToAccountMenu() {
         System.out.println("""
                                 
-                LOGIN MENU                
+                LOGIN MENU
                 1. Login
                 2. Return to main panel
                                 
@@ -129,7 +131,7 @@ public class Menu {
         System.out.println("\nWelcome ***" + customer.getFirstName() + "***");
         System.out.println("""
                                 
-                USER ACCOUNT MENU                
+                USER ACCOUNT MENU
                 1. Update your data (wip)
                 2. Rent a boat without reservation code
                 3. Rent a boat with reservation code
@@ -165,7 +167,7 @@ public class Menu {
     public static void printYesNoMenu() {
         System.out.println("""
                                 
-                Would like to exit?               
+                Would like to exit?
                 1. Yes
                 2. No
                 """);
@@ -211,7 +213,6 @@ public class Menu {
             System.out.print("Incorrect choice, try again >");
             date = scanner.next();
         }
-
         return LocalDate.parse(date);
 
     }
@@ -260,7 +261,6 @@ public class Menu {
                 } else {
                     System.out.println("Reservation code in incorrect");
                 }
-
             }
             case 2 -> printMainPanelMenu();
             default -> throw new IllegalStateException("Unexpected value: " + choice);
@@ -288,12 +288,10 @@ public class Menu {
                 printRentalInformation(reservation);
             }
         }
-
     }
 
 
-
-///////////////////////////////////////////////////////////////////////////////  
+///////////////////////////////////////////////////////////////////////////////
 //BOAT RESERVATIONS AND RENTALS
 ///////////////////////////////////////////////////////////////////////////////
 

@@ -1,7 +1,7 @@
 package pl.isa.alphateam;
 
 
-import java.time.Duration;
+
 import java.time.LocalDate;
 import java.util.*;
 
@@ -12,8 +12,6 @@ import static pl.isa.alphateam.ReservationUtils.getListOfDaysForPeriod;
 
 public class BoatReservationSystem {
     private static final Map<String, Reservation> reservationCodeMap = new HashMap<>();
-   private static final List<Reservation> reservations = getListOfReservationsFromFakeDatabase();
-   // private static List<Reservation> reservations = getListOfReservationsFromDatabase();
 
     public static Reservation rentBoatWithReservationCode(String reservationCode) {
         return reservationCodeMap.get(reservationCode);
@@ -54,13 +52,13 @@ public class BoatReservationSystem {
 
     public static List<LocalDate> getListOFDatesNAforBoatId(int boatId) {
         List<LocalDate> datesForBoat = new ArrayList<>();
-        List<Reservation> reservationList = new ArrayList<>(getListOfReservationsFromDatabase());;
+        List<Reservation> reservationList = new ArrayList<>(getListOfReservationsFromDatabase());
         for (Reservation reservation : reservationList) {
             if (reservation.getBoat().getBoatId() == boatId) {
                 LocalDate startDate = reservation.getStartDate();
                 LocalDate endDate = reservation.getEndDate();
 
-                datesForBoat= getListOfDaysForPeriod(startDate, endDate);
+                datesForBoat = getListOfDaysForPeriod(startDate, endDate);
             }
         }
         return datesForBoat;
@@ -68,7 +66,7 @@ public class BoatReservationSystem {
 
     public static List<Reservation> getListOfReservationsForCustomer(Customer customer) {
         List<Reservation> reservationListForCustomer = new ArrayList<>();
-        List<Reservation> reservationList = new ArrayList<>(getListOfReservationsFromDatabase());;
+        List<Reservation> reservationList = new ArrayList<>(getListOfReservationsFromDatabase());
         for (Reservation reservation : reservationList) {
 
             if (reservation.getCustomer().getEmailAddress().equals(customer.getEmailAddress())) {

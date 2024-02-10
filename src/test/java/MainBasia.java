@@ -24,7 +24,7 @@ public class MainBasia {
         boolean written = saveBoatInDatabase(boats);
         System.out.println(written);*/
 
-     //   Menu.printMainPanelMenu();
+        //   Menu.printMainPanelMenu();
 //////////////////////////
     /*    List<Customer> customers = new ArrayList<>();
         customers= JSONParserCustomer.getCustomers1();
@@ -42,22 +42,28 @@ public class MainBasia {
         customers.add(kasia);
         JSONParserCustomer.saveCustomer(customers);*/
 
-      //  CustomerDataCenter.getLoginMap();
+        //  CustomerDataCenter.getLoginMap();
 /////////////////////////////
 
+
+/*
 
         Map<Map<String, String>, Customer> customerLoginDetails = new HashMap<>();
         var customersList = JSONParserCustomer.customersList;
 
         for (Customer customer : customersList) {
             System.out.println(customer);
- /*           Map<String, String> login = new HashMap<>();
+ */
+/*           Map<String, String> login = new HashMap<>();
             login.put(customer.getFirstName(), customer.getPassword());
-            customerLoginDetails.put(login, customer);*/
-        }
+            customerLoginDetails.put(login, customer);*//*
 
-        Map<String, String> loginDetails = new HashMap<>();
-        loginDetails.put("email", "pass");
+        }
+*/
+
+
+
+
 
 
         /////////////////////////////
@@ -68,35 +74,43 @@ public class MainBasia {
             System.out.println(reservation);
         }
         JSONParserReservation.saveReservationInDatabase(reservationList);*/
-        LocalDate currentDate = LocalDate.now();
-        LocalDate date18YearsBack = currentDate.minusYears(18);
-        System.out.println(date18YearsBack);
 
-        Address addressM = new Address("Polska", "Łódź", "Hetmańska", 10);
+
+/*        LocalDate currentDate = LocalDate.now();
+        LocalDate date18YearsBack = currentDate.minusYears(18);
+        System.out.println(date18YearsBack);*/
+
+
+
+
+
+
+/*        Address addressM = new Address("Polska", "Łódź", "Hetmańska", 10);
         Boat boatM = new Boat("Banana Boat", 12, 251.2, true, 2);
-        Customer customerM = new Customer("Imie", "Skoczylas", "1996-01-22",
-                "123456", addressM, "m.skoczylas1996@gmail.com", "babajaga");
+        Customer customerM = new Customer("Michal", "Skoczylas", "1996-01-22",
+                "123456", "123456789", addressM, "m.skoczylas1996@gmail.com", "babajaga");
         String startdate = "2024-01-01";
         String endDate = "2024-01-15";
+
 
         Reservation reservationM = new Reservation(LocalDate.parse(startdate),
                 LocalDate.parse(endDate), customerM, boatM);
 
-
-       // var reservations =getListOfReservationsFromDatabase();
-        var reservations= getListOfReservationsFromDatabase().stream().collect(toCollection(ArrayList::new));
+        var reservations = getListOfReservationsFromDatabase().stream().collect(toCollection(ArrayList::new));
         for (Reservation reservation : reservations) {
             System.out.println(reservation);
         }
         System.out.println("----");
         reservations.add(reservationM);
         saveReservationInDatabase(reservations);
-        reservations= new ArrayList<>(getListOfReservationsFromDatabase());
+        reservations = new ArrayList<>(getListOfReservationsFromDatabase());
         for (Reservation reservation : reservations) {
             System.out.println(reservation);
-        }
+        }*/
 
     }
+
+
 
 }
 

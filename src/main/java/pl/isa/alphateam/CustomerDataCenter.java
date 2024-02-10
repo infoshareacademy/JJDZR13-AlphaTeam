@@ -37,13 +37,14 @@ public class CustomerDataCenter {
         Customer customer = new Customer(customerData.get("firstName"),
                 customerData.get("lastName"),
                 customerData.get("birthdayDate"),
+                customerData.get("phoneNumber"),
                 customerData.get("patentNo"),
                 address,
                 customerData.get("emailAddress"),
                 customerData.get("password"));
 
         List<Customer> customerList = new ArrayList<>();
-        ;
+
         try {
             customerList = JSONParserCustomer.getCustomers1();
 
@@ -57,7 +58,7 @@ public class CustomerDataCenter {
     public static boolean checkIfEmailExists(String email) {
         try {
             List<Customer> customerList = JSONParserCustomer.getCustomers1();
-            for (Customer customer:customerList) {
+            for (Customer customer : customerList) {
                 if (customer.getEmailAddress().equals(email)) {
                     return true;
                 }
