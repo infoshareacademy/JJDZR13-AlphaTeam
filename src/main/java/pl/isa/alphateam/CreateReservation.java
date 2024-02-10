@@ -1,9 +1,5 @@
 package pl.isa.alphateam;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.SerializationFeature;
-
-
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -11,22 +7,31 @@ import java.util.Scanner;
 
 import static pl.isa.alphateam.JSONParserBoat.getListOfBoatsFromDatabase;
 
-import static pl.isa.alphateam.JSONParserReservation.saveReservationInDatabase;
+public class CreateReservation {
 
-public class BoatReservationSystem {
+    public static List<Reservation> getReservations() {
+        return JSONParserReservation.getListOfReservationsFromDatabase();
+    }
 
+    public static void addReservation(Reservation reservation) {
+        List<Reservation> reservations = new ArrayList<>();
+        reservations.add(reservation);
+        JSONParserReservation.saveReservationInDatabase(reservations);
+    }
 
-    public static void main(String[] args) {
-
+    public static Reservation makeReservation(){
         Scanner scanner = new Scanner(System.in);
 
 
         // Tworzenie klienta, łodzi i rezerwacji
         Address addressM = new Address("Polska", "Łódź", "Hetmańska", 10);
-////
-//        Boat boat = new Boat("FalconGGGG", 10, 150, true, 7778);
-        Customer customer = new Customer("MichalNNN", "Skoczylas", "1996-01-22",
-                "123456", "1235", addressM, "m.skoczylas1996@gmail.com", "babajaga");
+
+        Boat boatMajkel = new Boat("Fujimo", 12, 130.5, true, 4466 );
+
+
+
+        Customer customerMajkel = new Customer("Majkel", "Skoczylas", "1996-01-22",
+                "1234756", "123599", addressM, "m.skoczylas1996@gmail.com", "papajaga");
 
 
         // Wprowadzanie danych przez użytkownika
@@ -70,38 +75,23 @@ public class BoatReservationSystem {
                     boat.setAvailable(false);
                     System.out.println("Reservation successful! You have reserved " + boat.getName());
                     reservationSuccessful = true;
-                    Reservation reservation = new Reservation(startDate, endDate, customer, boat);
-                    System.out.println("Rezerwacja dodana: " + reservation.getStartDate() + " - " +
+                    Reservation reservation = new Reservation(startDate, endDate, customerMajkel, boat);
+                    System.out.println("Reservation added: " + reservation.getStartDate() + " - " +
                             reservation.getEndDate() +
-                            " dla klienta " + reservation.getCustomer().getFirstName() + " na łódź " +
+                            " for customer: " + reservation.getCustomer().getFirstName() + " for boat: " +
                             reservation.getBoat().getName());
-
-                    List<Reservation> reservations = new ArrayList<>();
-                    reservations.add(reservation);
-                    saveReservationInDatabase(reservations);
-                    break;
                 }
             }
 
             if (!reservationSuccessful) {
                 System.out.println("Invalid boatId or the boat is not available. Please try again.");
+
             }
 
         }
 
 
+       return new Reservation(startDate, endDate, customerMajkel, boatMajkel);
     }
-
-}
-
-
-
-
-
-
-
-
-
-
-
+    }
 

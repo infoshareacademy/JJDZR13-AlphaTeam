@@ -43,7 +43,7 @@ public class Menu {
                 reporting.printListOfAvailableBoats();
                 printDisplayBoatsMenu();
             }
-            case 2 -> System.out.println("TO DO");
+            case 2 -> createReservation();
             case 3 -> printMainPanelMenu();
             case 4 -> System.out.println("TO DO");
             default -> throw new IllegalStateException("Unexpected value: " + choice);
@@ -70,6 +70,12 @@ public class Menu {
         CreateAccount.addCustomer(newCustomer);
         System.out.println("Account created successfully!");
         printRegisterFormMenu();
+    }
+
+    private static void createReservation() {
+        Reservation newReservation = CreateReservation.makeReservation();
+        CreateReservation.addReservation(newReservation);
+        printMainPanelMenu();
     }
 
     public static void printRegisterFormMenu() {

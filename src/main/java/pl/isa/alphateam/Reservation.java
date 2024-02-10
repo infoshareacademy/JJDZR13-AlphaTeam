@@ -5,12 +5,11 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.time.Duration;
 import java.time.LocalDate;
-import java.util.List;
-import java.util.Map;
-import java.util.UUID;
+import java.util.*;
 
 import static pl.isa.alphateam.JSONParserBoat.getListOfBoatsFromDatabase;
 import static pl.isa.alphateam.JSONParserBoat.saveBoatInDatabase;
+import static pl.isa.alphateam.JSONParserReservation.saveReservationInDatabase;
 
 
 public class Reservation {
@@ -95,7 +94,6 @@ public class Reservation {
         long dayNo = Duration.between(startDate.atStartOfDay(), endDate.atStartOfDay()).toDays();
         return boat.getCostPerDay() * dayNo;
     }
-
 
 
 }
