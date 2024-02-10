@@ -5,6 +5,8 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Calendar;
 
+import java.util.Objects;
+
 public class Customer {
     private String firstName;
     private String lastName;
@@ -15,8 +17,9 @@ public class Customer {
     private String emailAddress;
     private String password;
 
-    public Customer(){
+    public Customer() {
     }
+
     public Customer(String firstName, String lastName, String birthdayDate, String phoneNumber, String patentNo, Address address, String emailAddress, String password) {
         this.firstName = firstName;
         this.lastName = lastName;
@@ -47,7 +50,11 @@ public class Customer {
     public String getBirthdayDate() {
         return birthdayDate;
     }
-    public void setBirthdayDate() { this.birthdayDate = birthdayDate; }
+
+    public void setBirthdayDate() {
+        this.birthdayDate = birthdayDate;
+    }
+
     static int calculateAge(String birthdayDate) {
         try {
             Date birthDate = new SimpleDateFormat("yyyy-MM-dd").parse(birthdayDate); //parsuje - zmienia format na Date
@@ -64,9 +71,11 @@ public class Customer {
             return -1;
         }
     }
+
     public String getPhoneNumber() {
         return phoneNumber;
     }
+
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
@@ -115,5 +124,18 @@ public class Customer {
                 ", emailAddress='" + emailAddress + '\'' +
                 ", password='" + password + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Customer customer = (Customer) o;
+        return Objects.equals(firstName, customer.firstName) && Objects.equals(lastName, customer.lastName) && Objects.equals(birthdayDate, customer.birthdayDate) && Objects.equals(patentNo, customer.patentNo) && Objects.equals(address, customer.address) && Objects.equals(emailAddress, customer.emailAddress) && Objects.equals(password, customer.password);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(firstName, lastName, birthdayDate, patentNo, address, emailAddress, password);
     }
 }
