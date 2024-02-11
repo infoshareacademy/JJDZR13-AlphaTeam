@@ -10,6 +10,7 @@ public class Boat {
     public Boat() {
 
     }
+
     public Boat(String name, int capacity, double costPerDay, boolean isAvailable, int boatId) {
         this.name = name;
         this.capacity = capacity;
@@ -22,16 +23,7 @@ public class Boat {
         return name;
     }
 
-    @Override
-    public String toString() {
-        return "Boat{" +
-                "name='" + name + '\'' +
-                ", capacity=" + capacity +
-                ", costPerDay=" + costPerDay +
-                ", isAvailable=" + isAvailable +
-                ", boatId='" + boatId + '\'' +
-                '}';
-    }
+
     public void setName(String name) {
         this.name = name;
     }

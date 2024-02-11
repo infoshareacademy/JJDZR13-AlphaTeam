@@ -5,11 +5,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.time.Duration;
 import java.time.LocalDate;
-import java.util.*;
 
-import static pl.isa.alphateam.JSONParserBoat.getListOfBoatsFromDatabase;
-import static pl.isa.alphateam.JSONParserBoat.saveBoatInDatabase;
-import static pl.isa.alphateam.JSONParserReservation.saveReservationInDatabase;
+import static pl.isa.alphateam.ReservationUtils.generateId;
 
 
 public class Reservation {
@@ -17,8 +14,10 @@ public class Reservation {
     private LocalDate endDate;
     private Customer customer;
     private Boat boat;
+    private String reservationCode = "";
 
     public Reservation() {
+
     }
 
     public Reservation(LocalDate startDate, LocalDate endDate, Customer customer, Boat boat) {
@@ -26,16 +25,7 @@ public class Reservation {
         this.endDate = endDate;
         this.customer = customer;
         this.boat = boat;
-    }
-
-    @Override
-    public String toString() {
-        return "Reservation{" +
-                "startDate='" + startDate + '\'' +
-                ", endDate=" + endDate +
-                ", customer=" + customer +
-                ", boat='" + boat + '\'' +
-                '}';
+       this.reservationCode = generateId();
     }
 
 
@@ -53,6 +43,15 @@ public class Reservation {
         return endDate.toString();
     }
 
+    @Override
+    public String toString() {
+        return "Reservation{" +
+                "startDate='" + startDate + '\'' +
+                ", endDate=" + endDate +
+                ", customer=" + customer +
+                ", boat='" + boat + '\'' +
+                '}';
+    }
 
     public void setEndDateProperty(String date) {
         this.endDate = LocalDate.parse(date);
@@ -67,7 +66,6 @@ public class Reservation {
     public LocalDate getEndDate() {
         return endDate;
     }
-
 
     public void setEndDate(LocalDate endDate) {
         this.endDate = endDate;
@@ -91,9 +89,13 @@ public class Reservation {
 
     @JsonIgnore
     public Double getCostOfReservation() {
-        long dayNo = Duration.between(startDate.atStartOfDay(), endDate.atStartOfDay()).toDays();
+        long dayNo = Duration.between(startDate.atStartOfDay(), endDate.atStartOfDay()).toDays()+1;
         return boat.getCostPerDay() * dayNo;
     }
 
+    @JsonIgnore
+    public String getReservationCode() {
+        return reservationCode;
+    }
 
 }

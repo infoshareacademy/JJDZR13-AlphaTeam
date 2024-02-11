@@ -1,19 +1,19 @@
 import pl.isa.alphateam.Address;
-import pl.isa.alphateam.CreateAccount;
 import pl.isa.alphateam.Customer;
 import pl.isa.alphateam.JSONParserCustomer;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.Scanner;
 
 public class MainKlaudia {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         Scanner scanner = new Scanner(System.in);
 
         testCreateAndAddCustomer(scanner); // Uruchom metodę testową
     }
 
-    public static void testCreateAndAddCustomer(Scanner scanner) {
+    public static void testCreateAndAddCustomer(Scanner scanner) throws IOException {
 
         System.out.println("Enter name: ");
         String firstName = scanner.nextLine();
@@ -44,8 +44,8 @@ public class MainKlaudia {
         addCustomer(customer);
     }
 
-    public static void addCustomer(Customer customer) {
-        List<Customer> customers = JSONParserCustomer.getListOfCustomerFromDatabase();
+    public static void addCustomer(Customer customer) throws IOException {
+        List<Customer> customers = JSONParserCustomer.getCustomers1();
 
         // Dodanie nowego klienta do listy klientów
         customers.add(customer);

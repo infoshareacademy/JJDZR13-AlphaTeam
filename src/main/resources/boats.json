@@ -13,8 +13,8 @@
 }, {
   "name" : "Cruise Ship",
   "capacity" : 1200,
-  "costPerDay" : 36541.2,
-  "isAvailable" : false,
+  "costPerDay" : 6541.2,
+  "isAvailable" : true,
   "boatId" : 3
 }, {
   "name" : "Cable Ferry",
@@ -30,26 +30,26 @@
   "boatId" : 5
 }, {
   "name" : "Canoe",
-  "capacity" : 5,
+  "capacity" : 7,
   "costPerDay" : 6.54,
   "isAvailable" : true,
   "boatId" : 6
 }, {
-  "name" : "BoatName",
-  "capacity" : 5,
-  "costPerDay" : 100.5,
+  "name" : "Gone Fishing",
+  "capacity" : 25,
+  "costPerDay" : 10,
   "isAvailable" : true,
   "boatId" : 7
 }, {
-  "name" : "BoatName",
+  "name" : "Endless Summer",
   "capacity" : 5,
-  "costPerDay" : 100.5,
+  "costPerDay" : 50.5,
   "isAvailable" : true,
   "boatId" : 8
 }, {
-  "name" : "BoatName",
-  "capacity" : 5,
-  "costPerDay" : 100.5,
+  "name" : "Neptune",
+  "capacity" : 8,
+  "costPerDay" : 200.5,
   "isAvailable" : true,
   "boatId" : 9
 } ]

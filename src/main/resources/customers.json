@@ -1,18 +1,4 @@
 [ {
-  "firstName" : "Klaudia ",
-  "lastName" : "Senator",
-  "birthdayDate" : "1999-09-10",
-  "phoneNumber" : "22233355",
-  "patentNo" : "1234",
-  "address" : {
-    "country" : "Polska",
-    "city" : "Łódź",
-    "street" : "Kilińskiego",
-    "streetNo" : 180
-  },
-  "emailAddress" : "klaudiasenator10@gmail.com",
-  "password" : "drowssap"
-}, {
   "firstName" : "Ola",
   "lastName" : "Kot",
   "birthdayDate" : "1990-01-01",
@@ -26,4 +12,46 @@
   },
   "emailAddress" : "ola.kot@gmail.com",
   "password" : "piesek1"
+}, {
+  "firstName" : "Tosia",
+  "lastName" : "Nazwisko",
+  "birthdayDate" : "2001-01-01",
+  "phoneNumber" : "123456789",
+  "patentNo" : "ok",
+  "address" : {
+    "country" : "Kraj",
+    "city" : "Miasto",
+    "street" : "ulica",
+    "streetNo" : 5
+  },
+  "emailAddress" : "tosiaEmail",
+  "password" : "tosiaPass"
+}, {
+  "firstName" : "Zosia",
+  "lastName" : "Taka",
+  "birthdayDate" : "2003-01-06",
+  "phoneNumber" : "123456789",
+  "patentNo" : "patent",
+  "address" : {
+    "country" : "Kraj",
+    "city" : "Miasto",
+    "street" : "ulica",
+    "streetNo" : 4
+  },
+  "emailAddress" : "zosiaEmail",
+  "password" : "zosiaPass"
+}, {
+  "firstName" : "Kasia",
+  "lastName" : "Kowalska",
+  "birthdayDate" : "1985-05-06",
+  "phoneNumber" : "123987456",
+  "patentNo" : "patent1",
+  "address" : {
+    "country" : "Kraj",
+    "city" : "Miasto",
+    "street" : "ulica",
+    "streetNo" : 5
+  },
+  "emailAddress" : "kasiaEmail",
+  "password" : "kasiaPass"
 } ]
