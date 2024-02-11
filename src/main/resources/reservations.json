@@ -21,8 +21,8 @@
     "isAvailable" : true,
     "boatId" : 1
   },
-  "endDate" : "2024-02-04",
-  "startDate" : "2024-02-03"
+  "startDate" : "2024-02-03",
+  "endDate" : "2024-02-04"
 }, {
   "customer" : {
     "firstName" : "Tosia",
@@ -46,8 +46,8 @@
     "isAvailable" : true,
     "boatId" : 3
   },
-  "endDate" : "2024-05-03",
-  "startDate" : "2024-05-01"
+  "startDate" : "2024-05-01",
+  "endDate" : "2024-05-03"
 }, {
   "customer" : {
     "firstName" : "Tosia",
@@ -71,8 +71,8 @@
     "isAvailable" : true,
     "boatId" : 5
   },
-  "endDate" : "2024-06-03",
-  "startDate" : "2024-06-01"
+  "startDate" : "2024-06-01",
+  "endDate" : "2024-06-03"
 }, {
   "customer" : {
     "firstName" : "Kasia",
@@ -96,8 +96,8 @@
     "isAvailable" : true,
     "boatId" : 6
   },
-  "endDate" : "2024-05-03",
-  "startDate" : "2024-05-01"
+  "startDate" : "2024-05-01",
+  "endDate" : "2024-05-03"
 }, {
   "customer" : {
     "firstName" : "Ola",
@@ -121,8 +121,8 @@
     "isAvailable" : true,
     "boatId" : 9
   },
-  "endDate" : "2024-03-03",
-  "startDate" : "2024-03-03"
+  "startDate" : "2024-03-03",
+  "endDate" : "2024-03-03"
 }, {
   "customer" : {
     "firstName" : "Ola",
@@ -146,8 +146,8 @@
     "isAvailable" : true,
     "boatId" : 8
   },
-  "endDate" : "2024-08-06",
-  "startDate" : "2024-08-03"
+  "startDate" : "2024-08-03",
+  "endDate" : "2024-08-06"
 }, {
   "customer" : {
     "firstName" : "Kasia",
@@ -171,8 +171,8 @@
     "isAvailable" : true,
     "boatId" : 3
   },
-  "endDate" : "2024-07-03",
-  "startDate" : "2024-07-01"
+  "startDate" : "2024-07-01",
+  "endDate" : "2024-07-03"
 }, {
   "customer" : {
     "firstName" : "Tosia",
@@ -196,8 +196,8 @@
     "isAvailable" : true,
     "boatId" : 2
   },
-  "endDate" : "2024-02-15",
-  "startDate" : "2024-02-15"
+  "startDate" : "2024-02-15",
+  "endDate" : "2024-02-15"
 }, {
   "customer" : {
     "firstName" : "Tosia",
@@ -221,6 +221,31 @@
     "isAvailable" : true,
     "boatId" : 5
   },
-  "endDate" : "2024-01-01",
-  "startDate" : "2024-01-01"
+  "startDate" : "2024-01-01",
+  "endDate" : "2024-01-01"
+}, {
+  "customer" : {
+    "firstName" : "Michal",
+    "lastName" : "Skoczylas",
+    "birthdayDate" : "1996-02-02",
+    "phoneNumber" : "111222333",
+    "patentNo" : "12345678999",
+    "address" : {
+      "country" : "Polska",
+      "city" : "Łódź",
+      "street" : "Zachodnia",
+      "streetNo" : 1
+    },
+    "emailAddress" : "Majkel",
+    "password" : "babajaga"
+  },
+  "boat" : {
+    "name" : "Banana Boat",
+    "capacity" : 12,
+    "costPerDay" : 251.2,
+    "isAvailable" : true,
+    "boatId" : 2
+  },
+  "startDate" : "2025-02-02",
+  "endDate" : "2025-02-05"
 } ]
