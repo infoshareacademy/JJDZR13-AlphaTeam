@@ -54,4 +54,18 @@
   },
   "emailAddress" : "kasiaEmail",
   "password" : "kasiaPass"
+}, {
+  "firstName" : "Michal",
+  "lastName" : "Skoczylas",
+  "birthdayDate" : "1996-02-02",
+  "phoneNumber" : "111222333",
+  "patentNo" : "12345678999",
+  "address" : {
+    "country" : "Polska",
+    "city" : "Łódź",
+    "street" : "Zachodnia",
+    "streetNo" : 1
+  },
+  "emailAddress" : "Majkel",
+  "password" : "babajaga"
 } ]

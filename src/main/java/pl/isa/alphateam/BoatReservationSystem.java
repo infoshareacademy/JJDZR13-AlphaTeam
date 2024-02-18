@@ -1,13 +1,14 @@
 package pl.isa.alphateam;
 
-
-
 import java.time.LocalDate;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import static pl.isa.alphateam.JSONParserBoat.getListOfBoatsFromDatabase;
-
-import static pl.isa.alphateam.JSONParserReservation.*;
+import static pl.isa.alphateam.JSONParserReservation.getListOfReservationsFromDatabase;
+import static pl.isa.alphateam.JSONParserReservation.saveReservationInDatabase;
 import static pl.isa.alphateam.ReservationUtils.getListOfDaysForPeriod;
 
 public class BoatReservationSystem {
@@ -76,15 +77,3 @@ public class BoatReservationSystem {
         return reservationListForCustomer;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
