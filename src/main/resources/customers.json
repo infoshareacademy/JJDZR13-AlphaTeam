@@ -82,4 +82,32 @@
   },
   "emailAddress" : "tosiaPass",
   "password" : "newPass"
+}, {
+  "firstName" : "Imie",
+  "lastName" : "Nazwisko",
+  "birthdayDate" : "2001-12-01",
+  "phoneNumber" : "1234567",
+  "patentNo" : "patnet",
+  "address" : {
+    "country" : "Kraj",
+    "city" : "Miasto",
+    "street" : "ulica",
+    "streetNo" : 7
+  },
+  "emailAddress" : "imieEmail",
+  "password" : "imiePass"
+}, {
+  "firstName" : "Hello",
+  "lastName" : "World",
+  "birthdayDate" : "1999-01-01",
+  "phoneNumber" : "12345678",
+  "patentNo" : "patent",
+  "address" : {
+    "country" : "kraj",
+    "city" : "miasto",
+    "street" : "ulica",
+    "streetNo" : 8
+  },
+  "emailAddress" : "helloEmail",
+  "password" : "helloPass"
 } ]

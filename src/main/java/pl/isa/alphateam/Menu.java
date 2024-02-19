@@ -100,7 +100,15 @@ public class Menu {
         customerData.put("emailAddress", email);
 
         System.out.print("Please provide your password: >");
-        customerData.put("password", scanner.next());
+        String passFirst=scanner.next();
+        System.out.print("Please enter your password again: >");
+        String passSecond=scanner.next();
+        while (!passFirst.equals(passSecond)) {
+            System.out.print("Your password does not match, try again: >");
+           passSecond=scanner.next();
+        }
+
+        customerData.put("password", passSecond);
 
         CustomerDataCenter.createNewCustomerRecord(customerData);
         System.out.println("Account was created");
@@ -168,7 +176,7 @@ public class Menu {
     }
 
 
-    public static void printYesNoMenu() {
+    public static int printYesNoMenu() {
         System.out.println("""
                                 
                 Would like to exit?
@@ -177,11 +185,7 @@ public class Menu {
                 """);
         int choice = getChosenMenuItem(2);
 
-        switch (choice) {
-            case 1 -> printMainPanelMenu();
-            case 2 -> System.out.println("ok");
-            default -> throw new IllegalStateException("Unexpected value: " + choice);
-        }
+        return choice;
     }
 
 ///////////////////////////////////////////////////////////////////////////////  
@@ -326,20 +330,6 @@ public class Menu {
         System.out.print("Create/Login to your account in order to rent a boat");
     }
 
-    private static List<LocalDate> getReservationDates(int boatId) {
-        List<LocalDate> startAndEndDate = new ArrayList<>();
-        LocalDate startDate = getStartDateAndValidateAgainstDaysAvailableForBoat(boatId);
-        LocalDate endDate = getLocalDateInputFromUser(endDateRequest);
-        boolean isEndDateValid = getValidatedEndDateIncludingPeriodValidation(boatId, startDate, endDate);
-        if (isEndDateValid) {
-            startAndEndDate.add(startDate);
-            startAndEndDate.add(endDate);
-            return startAndEndDate;
-        } else {
-            return getReservationDates(boatId);
-        }
-    }
-
     private static boolean enterBoatReservationCode(Customer customer) {
         System.out.print("Enter your reservation code: >");
         String reservationCode = scanner.next();
@@ -363,16 +353,50 @@ public class Menu {
 
     }
 
+
 ///////////////////////////////////////////////////////////////////////////////
 //LOCAL DATES CHECKS AND VALIDATIONS
 ///////////////////////////////////////////////////////////////////////////////
 
-    private static boolean getValidatedEndDateIncludingPeriodValidation(int boatId, LocalDate startDate, LocalDate endDate) {
-        endDate = getEndDateAferStartDate(startDate, endDate);
+private static List<LocalDate> getReservationDates(int boatId) {
+    List<LocalDate> startAndEndDate = new ArrayList<>();
+    LocalDate startDate = getStartDateAndValidateAgainstDaysAvailableForBoat(boatId);
+    LocalDate endDate = getEndDateAferStartDate(startDate, getLocalDateInputFromUser(endDateRequest));
 
+    boolean isEndDateValid = getValidatedEndDateIncludingPeriodValidation(boatId, startDate, endDate);
+    if (isEndDateValid) {
+        startAndEndDate.add(startDate);
+        startAndEndDate.add(endDate);
+        return startAndEndDate;
+    } else {
+        return getReservationDates(boatId);
+    }
+}
+//////////////////////
+    private static boolean getValidatedEndDateIncludingPeriodValidation(int boatId, LocalDate startDate, LocalDate endDate) {
+
+        if (endDate.isBefore(startDate)) {
+            System.out.println("End date before start date");
+            getReservationDates(boatId);
+        }
         List<LocalDate> datesForBoat = getListOfDaysForPeriod(startDate, endDate);
 
-        return validateIfSelectedPeriodIsAvailableForRent(datesForBoat, BoatReservationSystem.getListOFDatesNAforBoatId(boatId));
+        LocalDate boatStartDate = datesForBoat.get(0);
+        LocalDate boatEndDate = datesForBoat.get(datesForBoat.size() - 1);
+
+        if (CollectionUtils.containsAny(datesForBoat, BoatReservationSystem.getListOFDatesNAforBoatId(boatId))) {
+            System.out.println("Boat for period from " + boatStartDate.toString() + " until " + boatEndDate.toString() + " is not available for rental");
+            int answer =printYesNoMenu();
+            if (answer == 1) {
+                printYesNoMenu();
+            } else {
+                return false;
+            }
+
+        }
+        System.out.println("Boat for period from " + boatStartDate.toString() + " until " + boatEndDate.toString() + " is available for rental");
+        return true;
+
     }
 
     private static LocalDate getEndDateAferStartDate(LocalDate startDate, LocalDate endDate) {
@@ -383,18 +407,6 @@ public class Menu {
         return endDate;
     }
 
-    private static boolean validateIfSelectedPeriodIsAvailableForRent(List<LocalDate> datesForBoat, List<LocalDate> listOFDatesNAforBoatId) {
-        LocalDate startDate = datesForBoat.get(0);
-        LocalDate endDate = datesForBoat.get(datesForBoat.size() - 1);
-
-        if (CollectionUtils.containsAny(datesForBoat, listOFDatesNAforBoatId)) {
-            System.out.println("Boat for period from " + startDate.toString() + " until " + endDate.toString() + " is not available for rental");
-            printYesNoMenu();
-            return false;
-        }
-        System.out.println("Boat for period from " + startDate.toString() + " until " + endDate.toString() + " is available for rental");
-        return true;
-    }
 
     private static LocalDate getStartDateAndValidateAgainstDaysAvailableForBoat(int boatId) {
 
@@ -431,7 +443,10 @@ public class Menu {
             } else {
                 System.out.println("Sorry, you must be aged 18 or above to rent a boat");
             }
-            printYesNoMenu();
+            int answer =printYesNoMenu();
+            if (answer == 1) {
+                printYesNoMenu();
+            }
             birthdayDate = getLocalDateInputFromUser("Please provide your birthday date (yyyy-mm-dd) >");
 
         }

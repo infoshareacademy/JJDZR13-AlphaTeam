@@ -21,8 +21,8 @@
     "isAvailable" : true,
     "boatId" : 1
   },
-  "endDate" : "2024-02-04",
-  "startDate" : "2024-02-03"
+  "startDate" : "2024-02-03",
+  "endDate" : "2024-02-04"
 }, {
   "customer" : {
     "firstName" : "Tosia",
@@ -46,8 +46,8 @@
     "isAvailable" : true,
     "boatId" : 3
   },
-  "endDate" : "2024-05-03",
-  "startDate" : "2024-05-01"
+  "startDate" : "2024-05-01",
+  "endDate" : "2024-05-03"
 }, {
   "customer" : {
     "firstName" : "Tosia",
@@ -71,8 +71,8 @@
     "isAvailable" : true,
     "boatId" : 5
   },
-  "endDate" : "2024-06-03",
-  "startDate" : "2024-06-01"
+  "startDate" : "2024-06-01",
+  "endDate" : "2024-06-03"
 }, {
   "customer" : {
     "firstName" : "Kasia",
@@ -96,8 +96,8 @@
     "isAvailable" : true,
     "boatId" : 6
   },
-  "endDate" : "2024-05-03",
-  "startDate" : "2024-05-01"
+  "startDate" : "2024-05-01",
+  "endDate" : "2024-05-03"
 }, {
   "customer" : {
     "firstName" : "Ola",
@@ -121,8 +121,8 @@
     "isAvailable" : true,
     "boatId" : 9
   },
-  "endDate" : "2024-03-03",
-  "startDate" : "2024-03-03"
+  "startDate" : "2024-03-03",
+  "endDate" : "2024-03-03"
 }, {
   "customer" : {
     "firstName" : "Ola",
@@ -146,8 +146,8 @@
     "isAvailable" : true,
     "boatId" : 8
   },
-  "endDate" : "2024-08-06",
-  "startDate" : "2024-08-03"
+  "startDate" : "2024-08-03",
+  "endDate" : "2024-08-06"
 }, {
   "customer" : {
     "firstName" : "Kasia",
@@ -171,8 +171,8 @@
     "isAvailable" : true,
     "boatId" : 3
   },
-  "endDate" : "2024-07-03",
-  "startDate" : "2024-07-01"
+  "startDate" : "2024-07-01",
+  "endDate" : "2024-07-03"
 }, {
   "customer" : {
     "firstName" : "Tosia",
@@ -196,8 +196,8 @@
     "isAvailable" : true,
     "boatId" : 2
   },
-  "endDate" : "2024-02-15",
-  "startDate" : "2024-02-15"
+  "startDate" : "2024-02-15",
+  "endDate" : "2024-02-15"
 }, {
   "customer" : {
     "firstName" : "Tosia",
@@ -221,8 +221,8 @@
     "isAvailable" : true,
     "boatId" : 5
   },
-  "endDate" : "2024-01-01",
-  "startDate" : "2024-01-01"
+  "startDate" : "2024-01-01",
+  "endDate" : "2024-01-01"
 }, {
   "customer" : {
     "firstName" : "Tosia",
@@ -246,8 +246,8 @@
     "isAvailable" : true,
     "boatId" : 4
   },
-  "endDate" : "2025-01-03",
-  "startDate" : "2024-12-31"
+  "startDate" : "2024-12-31",
+  "endDate" : "2025-01-03"
 }, {
   "customer" : {
     "firstName" : "Tomek",
@@ -271,8 +271,8 @@
     "isAvailable" : true,
     "boatId" : 3
   },
-  "endDate" : "2024-08-03",
-  "startDate" : "2024-08-01"
+  "startDate" : "2024-08-01",
+  "endDate" : "2024-08-03"
 }, {
   "customer" : {
     "firstName" : "Tosia",
@@ -296,8 +296,8 @@
     "isAvailable" : true,
     "boatId" : 1
   },
-  "endDate" : "2024-02-01",
-  "startDate" : "2024-01-01"
+  "startDate" : "2024-01-01",
+  "endDate" : "2024-02-01"
 }, {
   "customer" : {
     "firstName" : "Tosia",
@@ -321,6 +321,181 @@
     "isAvailable" : true,
     "boatId" : 2
   },
-  "endDate" : "2024-02-14",
-  "startDate" : "2024-02-03"
+  "startDate" : "2024-02-03",
+  "endDate" : "2024-02-14"
+}, {
+  "customer" : {
+    "firstName" : "Basia",
+    "lastName" : "Name",
+    "birthdayDate" : "2000-01-01",
+    "phoneNumber" : "123456",
+    "patentNo" : "patent",
+    "address" : {
+      "country" : "kraj",
+      "city" : "miasto",
+      "street" : "ulkica",
+      "streetNo" : 1
+    },
+    "emailAddress" : "tosiaPass",
+    "password" : "newPass"
+  },
+  "boat" : {
+    "name" : "Neptune",
+    "capacity" : 8,
+    "costPerDay" : 200.5,
+    "isAvailable" : true,
+    "boatId" : 9
+  },
+  "startDate" : "2024-03-04",
+  "endDate" : "2024-03-03"
+}, {
+  "customer" : {
+    "firstName" : "Basia",
+    "lastName" : "Name",
+    "birthdayDate" : "2000-01-01",
+    "phoneNumber" : "123456",
+    "patentNo" : "patent",
+    "address" : {
+      "country" : "kraj",
+      "city" : "miasto",
+      "street" : "ulkica",
+      "streetNo" : 1
+    },
+    "emailAddress" : "tosiaPass",
+    "password" : "newPass"
+  },
+  "boat" : {
+    "name" : "Banana Boat",
+    "capacity" : 12,
+    "costPerDay" : 251.2,
+    "isAvailable" : true,
+    "boatId" : 2
+  },
+  "startDate" : "2024-01-01",
+  "endDate" : "2024-01-15"
+}, {
+  "customer" : {
+    "firstName" : "Basia",
+    "lastName" : "Name",
+    "birthdayDate" : "2000-01-01",
+    "phoneNumber" : "123456",
+    "patentNo" : "patent",
+    "address" : {
+      "country" : "kraj",
+      "city" : "miasto",
+      "street" : "ulkica",
+      "streetNo" : 1
+    },
+    "emailAddress" : "tosiaPass",
+    "password" : "newPass"
+  },
+  "boat" : {
+    "name" : "Gone Fishing",
+    "capacity" : 25,
+    "costPerDay" : 10.0,
+    "isAvailable" : true,
+    "boatId" : 7
+  },
+  "startDate" : "2024-01-01",
+  "endDate" : "2024-01-01"
+}, {
+  "customer" : {
+    "firstName" : "Basia",
+    "lastName" : "Name",
+    "birthdayDate" : "2000-01-01",
+    "phoneNumber" : "123456",
+    "patentNo" : "patent",
+    "address" : {
+      "country" : "kraj",
+      "city" : "miasto",
+      "street" : "ulkica",
+      "streetNo" : 1
+    },
+    "emailAddress" : "tosiaPass",
+    "password" : "newPass"
+  },
+  "boat" : {
+    "name" : "Neptune",
+    "capacity" : 8,
+    "costPerDay" : 200.5,
+    "isAvailable" : true,
+    "boatId" : 9
+  },
+  "startDate" : "2024-02-02",
+  "endDate" : "2024-03-05"
+}, {
+  "customer" : {
+    "firstName" : "Basia",
+    "lastName" : "Name",
+    "birthdayDate" : "2000-01-01",
+    "phoneNumber" : "123456",
+    "patentNo" : "patent",
+    "address" : {
+      "country" : "kraj",
+      "city" : "miasto",
+      "street" : "ulkica",
+      "streetNo" : 1
+    },
+    "emailAddress" : "tosiaPass",
+    "password" : "newPass"
+  },
+  "boat" : {
+    "name" : "Banana Boat",
+    "capacity" : 12,
+    "costPerDay" : 251.2,
+    "isAvailable" : true,
+    "boatId" : 2
+  },
+  "startDate" : "2023-12-01",
+  "endDate" : "2023-12-13"
+}, {
+  "customer" : {
+    "firstName" : "Imie",
+    "lastName" : "Nazwisko",
+    "birthdayDate" : "2001-12-01",
+    "phoneNumber" : "1234567",
+    "patentNo" : "patnet",
+    "address" : {
+      "country" : "Kraj",
+      "city" : "Miasto",
+      "street" : "ulica",
+      "streetNo" : 7
+    },
+    "emailAddress" : "imieEmail",
+    "password" : "imiePass"
+  },
+  "boat" : {
+    "name" : "Cruise Ship",
+    "capacity" : 1200,
+    "costPerDay" : 6541.2,
+    "isAvailable" : true,
+    "boatId" : 3
+  },
+  "startDate" : "2024-07-01",
+  "endDate" : "2024-07-02"
+}, {
+  "customer" : {
+    "firstName" : "Hello",
+    "lastName" : "World",
+    "birthdayDate" : "1999-01-01",
+    "phoneNumber" : "12345678",
+    "patentNo" : "patent",
+    "address" : {
+      "country" : "kraj",
+      "city" : "miasto",
+      "street" : "ulica",
+      "streetNo" : 8
+    },
+    "emailAddress" : "helloEmail",
+    "password" : "helloPass"
+  },
+  "boat" : {
+    "name" : "Gone Fishing",
+    "capacity" : 25,
+    "costPerDay" : 10.0,
+    "isAvailable" : true,
+    "boatId" : 7
+  },
+  "startDate" : "2024-02-02",
+  "endDate" : "2024-02-15"
 } ]
