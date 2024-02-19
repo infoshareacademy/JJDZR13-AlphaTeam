@@ -109,6 +109,9 @@ public class MainBasia {
         }*/
 
     }
+//zakres data na rezerwacje
+//powtorzyc haslo do logowania
+//ukryc haslo przy logowaniu
 
 
 
