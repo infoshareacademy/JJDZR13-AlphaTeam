@@ -223,4 +223,104 @@
   },
   "endDate" : "2024-01-01",
   "startDate" : "2024-01-01"
+}, {
+  "customer" : {
+    "firstName" : "Tosia",
+    "lastName" : "Nazwisko",
+    "birthdayDate" : "2001-01-01",
+    "phoneNumber" : "123456789",
+    "patentNo" : "ok",
+    "address" : {
+      "country" : "Kraj",
+      "city" : "Miasto",
+      "street" : "ulica",
+      "streetNo" : 5
+    },
+    "emailAddress" : "tosiaEmail",
+    "password" : "tosiaPass"
+  },
+  "boat" : {
+    "name" : "Cable Ferry",
+    "capacity" : 25,
+    "costPerDay" : 21.3,
+    "isAvailable" : true,
+    "boatId" : 4
+  },
+  "endDate" : "2025-01-03",
+  "startDate" : "2024-12-31"
+}, {
+  "customer" : {
+    "firstName" : "Tomek",
+    "lastName" : "O",
+    "birthdayDate" : "2001-01-01",
+    "phoneNumber" : "123456",
+    "patentNo" : "patent",
+    "address" : {
+      "country" : "Polska",
+      "city" : "Gdansk",
+      "street" : "ulica",
+      "streetNo" : 2
+    },
+    "emailAddress" : "tomek@email.com",
+    "password" : "tomekPass"
+  },
+  "boat" : {
+    "name" : "Cruise Ship",
+    "capacity" : 1200,
+    "costPerDay" : 6541.2,
+    "isAvailable" : true,
+    "boatId" : 3
+  },
+  "endDate" : "2024-08-03",
+  "startDate" : "2024-08-01"
+}, {
+  "customer" : {
+    "firstName" : "Tosia",
+    "lastName" : "Nazwisko",
+    "birthdayDate" : "2001-01-01",
+    "phoneNumber" : "123456789",
+    "patentNo" : "ok",
+    "address" : {
+      "country" : "Kraj",
+      "city" : "Miasto",
+      "street" : "ulica",
+      "streetNo" : 5
+    },
+    "emailAddress" : "tosiaEmail",
+    "password" : "tosiaPass"
+  },
+  "boat" : {
+    "name" : "BoatName",
+    "capacity" : 5,
+    "costPerDay" : 100.5,
+    "isAvailable" : true,
+    "boatId" : 1
+  },
+  "endDate" : "2024-02-01",
+  "startDate" : "2024-01-01"
+}, {
+  "customer" : {
+    "firstName" : "Tosia",
+    "lastName" : "Nazwisko",
+    "birthdayDate" : "2001-01-01",
+    "phoneNumber" : "123456789",
+    "patentNo" : "ok",
+    "address" : {
+      "country" : "Kraj",
+      "city" : "Miasto",
+      "street" : "ulica",
+      "streetNo" : 5
+    },
+    "emailAddress" : "tosiaEmail",
+    "password" : "tosiaPass"
+  },
+  "boat" : {
+    "name" : "Banana Boat",
+    "capacity" : 12,
+    "costPerDay" : 251.2,
+    "isAvailable" : true,
+    "boatId" : 2
+  },
+  "endDate" : "2024-02-14",
+  "startDate" : "2024-02-03"
 } ]

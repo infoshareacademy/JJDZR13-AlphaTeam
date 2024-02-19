@@ -36,5 +36,6 @@ public class MainMichal {
             System.out.println(reservation);
         }
 
+    }
 
-    }}
+  }

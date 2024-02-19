@@ -54,4 +54,32 @@
   },
   "emailAddress" : "kasiaEmail",
   "password" : "kasiaPass"
+}, {
+  "firstName" : "Tomek",
+  "lastName" : "O",
+  "birthdayDate" : "2001-01-01",
+  "phoneNumber" : "123456",
+  "patentNo" : "patent",
+  "address" : {
+    "country" : "Polska",
+    "city" : "Gdansk",
+    "street" : "ulica",
+    "streetNo" : 2
+  },
+  "emailAddress" : "tomek@email.com",
+  "password" : "tomekPass"
+}, {
+  "firstName" : "Basia",
+  "lastName" : "Name",
+  "birthdayDate" : "2000-01-01",
+  "phoneNumber" : "123456",
+  "patentNo" : "patent",
+  "address" : {
+    "country" : "kraj",
+    "city" : "miasto",
+    "street" : "ulkica",
+    "streetNo" : 1
+  },
+  "emailAddress" : "tosiaPass",
+  "password" : "newPass"
 } ]
