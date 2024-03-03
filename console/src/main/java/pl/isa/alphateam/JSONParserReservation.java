@@ -15,7 +15,7 @@ import java.util.List;
 
 public class JSONParserReservation {
 
-    static final String RESERVATION_JSON_FILE_PATH = "src/main/resources/reservations.json";
+    static final String RESERVATION_JSON_FILE_PATH = "console/src/main/resources/reservations.json";
 
     private JSONParserReservation() {
         throw new IllegalStateException("Utility class");

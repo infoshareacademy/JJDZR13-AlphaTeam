@@ -23,7 +23,7 @@ public class JSONParserCustomer {
         }
     }
 
-    static final String CUSTOMERS_JSON_FILE_PATH = "src/main/resources/customers.json";
+    static final String CUSTOMERS_JSON_FILE_PATH = "console/src/main/resources/customers.json";
 
     private JSONParserCustomer() throws IOException {
         throw new IllegalStateException("Utility class");

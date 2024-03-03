@@ -12,7 +12,7 @@ import java.util.List;
 
 
 public class JSONParserBoat {
-    static final String BOAT_JSON_FILE_PATH = "src/main/resources/boats.json";
+    static final String BOAT_JSON_FILE_PATH = "console/src/main/resources/boats.json";
 
     private JSONParserBoat() {
         throw new IllegalStateException("Utility class");
