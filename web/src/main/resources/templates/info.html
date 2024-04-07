@@ -1,0 +1,25 @@
+<div th:fragment="content" class="container">
+    <div class="card mt-5" style="width: 50%; margin: 0 auto;">
+        <div class="card-top text-center p-2">
+            <h3 class="card-title">Formularz do logowania</h3>
+        </div>
+        <div class="card-body">
+            <table class="table table-striped">
+                <tbody>
+                <tr>
+                    <td th:text="${login}"></td>
+                </tr>
+                <tr>
+                    <td th:text="${surname}"></td>
+                </tr>
+                <tr>
+                    <td th:text="${lastname}"></td>
+                </tr>
+                <tr>
+                    <td th:text="${adress}"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
