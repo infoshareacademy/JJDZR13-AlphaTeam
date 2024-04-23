@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<div th:replace="~{header}"></div>
+<body>
+
+
+<div class="container">
+    <div>
+        <h1 class="jumbotron-heading" th:text="'Rentals for: '+${customer.firstName} +' '+ ${customer.lastName}"></h1>
+    </div>
+    <table class="table table-striped table-hover table-bordered" style="width: 70%" align="left">
+        <thead class="table-dark" align="center">
+        <th style="width:20%">Boat name</th>
+        <th style="width:10%">Boat id</th>
+        <th style="width:20%">From</th>
+        <th style="width:20%">To</th>
+        <th style="width:20%">Total cost</th>
+        </thead>
+        <tbody>
+
+        <tr th:each="reservation : ${reservations}">
+            <td th:text="${reservation.getBoat().name}" align="center">Boat name</td>
+            <td th:text="${reservation.getBoat().boatId}" align="center">Boat id</td>
+            <td th:text="${reservation.startDate}" align="center">From</td>
+            <td th:text="${reservation.endDate}" align="center">To</td>
+            <td th:text="${reservation.costOfReservation}" align="center">Total cost</td>
+        </tr>
+        </tbody>
+
+    </table>
+    <div>
+        <a th:href="@{/loginPage/{id}(id=${customer.id})}" class="btn btn-primary" style="margin: 15px">Back to account</a>
+    </div>
+</div>
+</div>
+</body>

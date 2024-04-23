@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<div th:replace="~{header}"></div>
+
+
+<div class="container text-center">
+    <section class="jumbotron text-left">
+        <div class="container">
+            <br>
+            <p>You have successfully created a new Account</p>
+
+        </div>
+        <div class="container">
+            <div>
+                <h1 class="jumbotron-heading" th:text="${customer.firstName} +' '+ ${customer.lastName}"></h1>
+            </div>
+            <table class="table table-light table-hover table-bordered" style="width: 50%" align="center">
+                <thead class="table-info">
+                <th style="width:20%"></th>
+                <th style="width:20%"></th>
+                </thead>
+                <tr>
+                    <td th:text="'Date of birth: '" align="left"></td>
+                    <td th:text="${customer.birthdayDate}" align="left"></td>
+                </tr>
+                <tr>
+                    <td th:text="'Phone number : '" align="left"></td>
+                    <td th:text="${customer.phoneNumber}" align="left"></td>
+                </tr>
+                <tr>
+                    <td th:text="'Patent number: '" align="left"></td>
+                    <td th:text="${customer.patentNo}" align="left"></td>
+                </tr>
+                <tr>
+                    <td th:text="'Email        : '" align="left"></td>
+                    <td th:text="${customer.emailAddress}" align="left"></td>
+                </tr>
+                <tr>
+                    <td th:text="'Password     : '" align="left"></td>
+                    <td th:text="${customer.password}" align="left"></td>
+                </tr>
+
+                <tr>
+
+                    <td th:text="'Country      : '" align="left"></td>
+                    <td th:text="${customer.country}" align="left"></td>
+                </tr>
+                <tr>
+                    <td th:text="'City         : '" align="left"></td>
+                    <td th:text="${customer.city}" align="left"></td>
+                </tr>
+
+                <tr>
+                    <td th:text="'Street       : '" align="left"></td>
+                    <td th:text="${customer.street}" align="left"></td>
+                </tr>
+                <tr>
+                    <td th:text="'No           : '" align="left"></td>
+                    <td th:text="${customer.streetNo}" align="left"></td>
+                </tr>
+
+            </table>
+        </div>
+        <div class="container">
+            <a class="btn btn-outline-primary" th:href="@{/}">Back to Menu</a>
+        </div>
+    </section>
+</div>
+
+<!-- Bootstrap core JS-->
+<script th:src="@{/bootstrap/js/bootstrap.bundle.min.js}"></script>
+</body>
+</html>

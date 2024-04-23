@@ -2,6 +2,20 @@ spring:
   thymeleaf:
     check-template-location: true
     cache: false
-    prefix: file:./src/main/resources/templates/
+    prefix: file:web/src/main/resources/templates/
+  datasource:
+    password: pass
+    url: jdbc:mysql://localhost:3306/boatapp?useSSL=false
+    username: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      dialect:
+        hibernate: org.hibernate.dialect.MySQL8Dialect
+      hibernate:
+        format_sql: true
+        show_sql: true
 
 server.port: 8000
+  

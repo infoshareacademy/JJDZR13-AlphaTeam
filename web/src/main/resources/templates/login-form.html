@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+
+>
+<div th:replace="~{header}"></div>
+<body>
+
+<div class="container">
+    <section class="jumbotron text-left">
+        <div class="row" align="left">
+            <h1> Login Form </h1>
+        </div>
+
+        <div class="container">
+            <p th:if="${error}" class="error">Email or password incorrect</p>
+            <form th:object="${login}"
+                  th:action="@{/loginPage}"
+                  method="post">
+                             <table class="table table-light table-hover table-bordered" style="width: 40%" align="left">
+                    <tr>
+                        <td>
+                            <div class="form-group">
+                                <label th:for="email_input_id">Email address:</label>
+                                <input
+                                        type="text"
+                                        id="email_input_id"
+                                        class="form-control"
+                                        th:field="*{email}">
+                                <p class="alert alert-danger" th:if="${#fields.hasErrors('email')}"
+                                   th:errors="*{email}"></p>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="form-group">
+                                <label th:for="password_input_id">Password:</label>
+                                <input
+                                        type="password"
+                                        id="password_input_id"
+                                        class="form-control"
+                                        th:field="*{password}">
+
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <div class="container" >
+                                <button
+                                        type="submit"
+                                        class="btn btn-outline-primary" style="width: 100px; margin-left: 15px">Login
+                                </button>
+                                <a class="btn btn-outline-danger" style="width: 100px; margin-left: 40px" th:href="@{/}">Cancel</a>
+                            </div>
+                        </td>
+                    </tr>
+
+                </table>
+
+            </form>
+
+        </div>
+    </section>
+</div>
+<!-- Bootstrap core JS-->
+<script th:src="@{/bootstrap/js/bootstrap.bundle.min.js}"></script>
+</body>
+</html>

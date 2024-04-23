@@ -1,0 +1,235 @@
+[ {
+  "customer" : {
+    "id" : 3,
+    "firstName" : "Zosia",
+    "lastName" : "Taka",
+    "birthdayDate" : "2003-01-06",
+    "phoneNumber" : "123456789",
+    "patentNo" : "patent",
+    "address" : {
+      "country" : "Kraj",
+      "city" : "Miasto",
+      "street" : "ulica",
+      "streetNo" : 4
+    },
+    "emailAddress" : "zosia@email.com",
+    "password" : "zosiaPass"
+  },
+  "boat" : {
+    "name" : "BoatName",
+    "capacity" : 5,
+    "costPerDay" : 100.5,
+    "isAvailable" : true,
+    "boatId" : 1
+  },
+  "endDate" : "2024-02-04",
+  "startDate" : "2024-02-03"
+}, {
+  "customer" : {
+    "id" : 2,
+    "firstName" : "Tosia",
+    "lastName" : "Nazwisko",
+    "birthdayDate" : "2001-01-01",
+    "phoneNumber" : "123456789",
+    "patentNo" : "ok",
+    "address" : {
+      "country" : "Kraj",
+      "city" : "Miasto",
+      "street" : "ulica",
+      "streetNo" : 5
+    },
+    "emailAddress" : "tosia@email.com",
+    "password" : "tosiaPass"
+  },
+  "boat" : {
+    "name" : "Cruise Ship",
+    "capacity" : 1200,
+    "costPerDay" : 6541.2,
+    "isAvailable" : true,
+    "boatId" : 3
+  },
+  "endDate" : "2024-05-03",
+  "startDate" : "2024-05-01"
+}, {
+  "customer" : {
+    "id" : 2,
+    "firstName" : "Tosia",
+    "lastName" : "Nazwisko",
+    "birthdayDate" : "2001-01-01",
+    "phoneNumber" : "123456789",
+    "patentNo" : "ok",
+    "address" : {
+      "country" : "Kraj",
+      "city" : "Miasto",
+      "street" : "ulica",
+      "streetNo" : 5
+    },
+    "emailAddress" : "tosia@email.com",
+    "password" : "tosiaPass"
+  },
+  "boat" : {
+    "name" : "Car Boat",
+    "capacity" : 2,
+    "costPerDay" : 15.24,
+    "isAvailable" : true,
+    "boatId" : 5
+  },
+  "endDate" : "2024-06-03",
+  "startDate" : "2024-06-01"
+}, {
+  "customer" : {
+    "id" : 4,
+    "firstName" : "Kasia",
+    "lastName" : "Kowalska",
+    "birthdayDate" : "1985-05-06",
+    "phoneNumber" : "123987456",
+    "patentNo" : "patent1",
+    "address" : {
+      "country" : "Kraj",
+      "city" : "Miasto",
+      "street" : "ulica",
+      "streetNo" : 5
+    },
+    "emailAddress" : "kasia@email.com",
+    "password" : "kasiaPass"
+  },
+  "boat" : {
+    "name" : "Canoe",
+    "capacity" : 7,
+    "costPerDay" : 6.54,
+    "isAvailable" : true,
+    "boatId" : 6
+  },
+  "endDate" : "2024-05-03",
+  "startDate" : "2024-05-01"
+}, {
+  "customer" : {
+    "id" : 1,
+    "firstName" : "Ola",
+    "lastName" : "Kot",
+    "birthdayDate" : "1990-01-01",
+    "phoneNumber" : "123456789",
+    "patentNo" : "345",
+    "address" : {
+      "country" : "Polska",
+      "city" : "Warszawa",
+      "street" : "Chmielna",
+      "streetNo" : 1
+    },
+    "emailAddress" : "ola.kot@gmail.com",
+    "password" : "piesek1"
+  },
+  "boat" : {
+    "name" : "Neptune",
+    "capacity" : 8,
+    "costPerDay" : 200.5,
+    "isAvailable" : true,
+    "boatId" : 9
+  },
+  "endDate" : "2024-03-03",
+  "startDate" : "2024-03-03"
+}, {
+  "customer" : {
+    "id" : 1,
+    "firstName" : "Ola",
+    "lastName" : "Kot",
+    "birthdayDate" : "1990-01-01",
+    "phoneNumber" : "123456789",
+    "patentNo" : "345",
+    "address" : {
+      "country" : "Polska",
+      "city" : "Warszawa",
+      "street" : "Chmielna",
+      "streetNo" : 1
+    },
+    "emailAddress" : "ola.kot@gmail.com",
+    "password" : "piesek1"
+  },
+  "boat" : {
+    "name" : "Endless Summer",
+    "capacity" : 5,
+    "costPerDay" : 50.5,
+    "isAvailable" : true,
+    "boatId" : 8
+  },
+  "endDate" : "2024-08-06",
+  "startDate" : "2024-08-03"
+}, {
+  "customer" : {
+    "id" : 4,
+    "firstName" : "Kasia",
+    "lastName" : "Kowalska",
+    "birthdayDate" : "1985-05-06",
+    "phoneNumber" : "123987456",
+    "patentNo" : "patent1",
+    "address" : {
+      "country" : "Kraj",
+      "city" : "Miasto",
+      "street" : "ulica",
+      "streetNo" : 5
+    },
+    "emailAddress" : "kasia@email.com",
+    "password" : "kasiaPass"
+  },
+  "boat" : {
+    "name" : "Cruise Ship",
+    "capacity" : 1200,
+    "costPerDay" : 6541.2,
+    "isAvailable" : true,
+    "boatId" : 3
+  },
+  "endDate" : "2024-07-03",
+  "startDate" : "2024-07-01"
+}, {
+  "customer" : {
+    "id" : 2,
+    "firstName" : "Tosia",
+    "lastName" : "Nazwisko",
+    "birthdayDate" : "2001-01-01",
+    "phoneNumber" : "123456789",
+    "patentNo" : "ok",
+    "address" : {
+      "country" : "Kraj",
+      "city" : "Miasto",
+      "street" : "ulica",
+      "streetNo" : 5
+    },
+    "emailAddress" : "tosia@email.com",
+    "password" : "tosiaPass"
+  },
+  "boat" : {
+    "name" : "Banana Boat",
+    "capacity" : 12,
+    "costPerDay" : 251.2,
+    "isAvailable" : true,
+    "boatId" : 2
+  },
+  "endDate" : "2024-02-15",
+  "startDate" : "2024-02-15"
+}, {
+  "customer" : {
+    "id" : 2,
+    "firstName" : "Tosia",
+    "lastName" : "Nazwisko",
+    "birthdayDate" : "2001-01-01",
+    "phoneNumber" : "123456789",
+    "patentNo" : "ok",
+    "address" : {
+      "country" : "Kraj",
+      "city" : "Miasto",
+      "street" : "ulica",
+      "streetNo" : 5
+    },
+    "emailAddress" : "tosia@email.com",
+    "password" : "tosiaPass"
+  },
+  "boat" : {
+    "name" : "Car Boat",
+    "capacity" : 2,
+    "costPerDay" : 15.24,
+    "isAvailable" : true,
+    "boatId" : 5
+  },
+  "endDate" : "2024-01-01",
+  "startDate" : "2024-01-01"
+} ]
