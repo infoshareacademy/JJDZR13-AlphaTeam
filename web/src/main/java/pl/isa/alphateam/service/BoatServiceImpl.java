@@ -36,11 +36,11 @@ public class BoatServiceImpl implements BoatService {
 
     }
 
-    @Override
+ /*   @Override
     public BoatDto findPostById(Long boatId) {
         Boat boat = boatRepository.findById(boatId).get();
         return BoatMapper.mapToBoatDto(boat);
-    }
+    }*/
 
     //gets boats from JSON
     @Override
@@ -51,7 +51,6 @@ public class BoatServiceImpl implements BoatService {
         Iterator<BoatDto> iterator = boatDtoList.iterator();
         while (iterator.hasNext()) {
             BoatDto boatDto = iterator.next();
-            System.out.println(boatDto);
             int noOfNAdates =boatDto.getNotAvailableDates()!=null? (int) boatDto.getNotAvailableDates().stream().filter(date -> datesInTimeRange.contains(date)).count():0;
             if (noOfNAdates > 0) {
                 iterator.remove();

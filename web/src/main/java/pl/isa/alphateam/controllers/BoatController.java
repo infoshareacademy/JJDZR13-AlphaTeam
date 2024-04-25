@@ -17,10 +17,14 @@ import pl.isa.alphateam.customer.Customer;
 import pl.isa.alphateam.customer.CustomerDto;
 import pl.isa.alphateam.customer.Login;
 import pl.isa.alphateam.parser.JSONParserBoat;
+import pl.isa.alphateam.reservation.FilterDates;
 import pl.isa.alphateam.service.BoatService;
+import pl.isa.alphateam.service.BoatServiceImpl;
 import pl.isa.alphateam.service.CustomerService;
 
 import java.util.List;
+
+import static pl.isa.alphateam.boat.BoatMapper.mapToBoat;
 
 
 @Controller
@@ -44,8 +48,8 @@ public class BoatController {
     @GetMapping("/boats")
     public String getListOfBoats(Model model) {
         logger.info("inside boats");
-        List<BoatDto> boatList = boatService.findAllBoats();
-        model.addAttribute("boats", boatList);
+       // List<BoatDto> boatList = boatService.findAllBoats();
+       // model.addAttribute("boats", boatList);
         return "list-of-boats";
     }
 
@@ -53,10 +57,23 @@ public class BoatController {
     public String getListOfBoatsParser(Model model) {
         logger.info("inside boats-parser");
         List<Boat> boatList = JSONParserBoat.getListOfBoatsFromDatabase();
-
         model.addAttribute("boats", boatList);
         return "list-of-boats";
     }
+
+   @GetMapping(value = "/boats-parser/filtered")
+    public String getListofBoatsForSpecifiedDates(@Valid @ModelAttribute("filterDates") FilterDates filterDates,
+                             BindingResult result,
+                             Model model) {
+
+       logger.info("inside boats-parser filtered");
+       List<BoatDto> boatList = boatService.findAllAvailableBoats(filterDates.getStartDate(), filterDates.getEndDate());
+       model.addAttribute("boats", mapToBoat(boatList));
+
+       return "list-of-boats";
+
+   }
+
 
     @GetMapping("/create-account")
     public String createToolForm(Model model) {

@@ -8,5 +8,5 @@ import java.util.Optional;
 
 
 public interface BoatRepository extends JpaRepository<Boat, Long> {
-    Optional<BoatDto> findByUrl(String url);
+   // Optional<BoatDto> findByUrl(String url);
 }

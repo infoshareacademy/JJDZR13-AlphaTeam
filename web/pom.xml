@@ -34,7 +34,6 @@
             <artifactId>jackson-databind</artifactId>
             <version>2.16.0</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/com.mysql/mysql-connector-j -->
         <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
         <dependency>
             <groupId>mysql</groupId>
@@ -46,7 +45,6 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
-            <scope>test</scope>
         </dependency>
 
         <dependency>

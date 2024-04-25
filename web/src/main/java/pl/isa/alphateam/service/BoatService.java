@@ -10,7 +10,7 @@ public interface BoatService {
     List<BoatDto> findAllBoats();
 
 
-    BoatDto findPostById(Long boatId);
+   // BoatDto findPostById(Long boatId);
     List<BoatDto> findAllAvailableBoats(LocalDate from, LocalDate to);
 
 }
