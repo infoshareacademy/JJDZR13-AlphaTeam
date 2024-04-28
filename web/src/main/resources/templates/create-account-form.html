@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+
+>
+<div th:replace="~{header}"></div>
+<body>
+
+<div class="container">
+    <section class="jumbotron text-left">
+
+
+        <div class="container">
+            <div class="row">
+                <h1>Create a new account</h1>
+            </div>
+            <form th:object="${customer}"
+                  th:action="@{/create-account}"
+                  method="post">
+                <table class="table table-light table-hover table-bordered" style="width: 40%" align="left">
+                    <tr>
+                        <td>
+                            <div class="form-group">
+                                <label th:for="firstname_input_id">Firstname:</label>
+                                <input
+                                        type="text"
+                                        id="firstname_input_id"
+                                        class="form-control"
+                                        th:field="*{firstName}">
+                                <p class="alert alert-danger" th:if="${#fields.hasErrors('firstName')}"
+                                   th:errors="*{firstName}"></p>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="form-group">
+                                <label th:for="lastname_input_id">Lastname:</label>
+                                <input
+                                        type="text"
+                                        id="lastname_input_id"
+                                        class="form-control"
+                                        th:field="*{lastName}">
+                                <p class="alert alert-danger" th:if="${#fields.hasErrors('lastName')}"
+                                   th:errors="*{lastName}"></p>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="form-group">
+                                <label th:for="bdate_input_id">Date of birth:</label>
+                                <input
+                                        type="date"
+                                        id="bdate_input_id"
+                                        class="form-control"
+                                        th:field="*{birthdayDate}">
+                                <p class="alert alert-danger" th:if="${#fields.hasErrors('birthdayDate')}"
+                                   th:errors="*{birthdayDate}"></p>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="form-group">
+                                <label th:for="phoneNumber_input_id">Phone number:</label>
+                                <input
+                                        type="text"
+                                        id="phoneNumber_input_id"
+                                        class="form-control"
+                                        th:field="*{phoneNumber}">
+                                <p class="alert alert-danger" th:if="${#fields.hasErrors('phoneNumber')}"
+                                   th:errors="*{phoneNumber}"></p>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="form-group">
+                                <label th:for="patent_input_id">Patent number:</label>
+                                <input
+                                        type="text"
+                                        id="patent_input_id"
+                                        class="form-control"
+                                        th:field="*{patentNo}">
+                                <p class="alert alert-danger" th:if="${#fields.hasErrors('patentNo')}"
+                                   th:errors="*{patentNo}"></p>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="form-group">
+                                <label th:for="email_input_id">Email:</label>
+                                <input
+                                        type="text"
+                                        id="email_input_id"
+                                        class="form-control"
+                                        th:field="*{emailAddress}">
+                                <p class="alert alert-danger" th:if="${#fields.hasErrors('emailAddress')}"
+                                   th:errors="*{emailAddress}"></p>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="form-group">
+                                <label th:for="pass_input_id">Password:</label>
+                                <input
+                                        type="text"
+                                        id="pass_input_id"
+                                        class="form-control"
+                                        th:field="*{password}">
+                                <p class="alert alert-danger" th:if="${#fields.hasErrors('password')}"
+                                   th:errors="*{password}"></p>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="form-group">
+                                <label th:for="country_input_id">Country:</label>
+                                <input
+                                        type="text"
+                                        id="country_input_id"
+                                        class="form-control"
+                                        th:field="*{country}">
+                                <p class="alert alert-danger" th:if="${#fields.hasErrors('country')}"
+                                   th:errors="*{country}"></p>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="form-group">
+                                <label th:for="city_input_id">City:</label>
+                                <input
+                                        type="text"
+                                        id="city_input_id"
+                                        class="form-control"
+                                        th:field="*{city}">
+                                <p class="alert alert-danger" th:if="${#fields.hasErrors('city')}"
+                                   th:errors="*{city}"></p>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <div class="form-group">
+                                <label th:for="street_input_id">Street:</label>
+                                <input
+                                        type="text"
+                                        id="street_input_id"
+                                        class="form-control"
+                                        th:field="*{street}">
+                                <p class="alert alert-danger" th:if="${#fields.hasErrors('street')}"
+                                   th:errors="*{street}"></p>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="form-group">
+                                <label th:for="streetNo_input_id">Street no:</label>
+                                <input
+                                        type="text"
+                                        id="size_input_id"
+                                        class="form-control"
+                                        th:field="*{streetNo}">
+                                <p class="alert alert-danger" th:if="${#fields.hasErrors('streetNo')}"
+                                   th:errors="*{streetNo}"></p>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <div class="container" >
+                                <button
+                                        type="submit"
+                                        class="btn btn-outline-success" style="width: 150px; margin-left: 15px">Create
+                                </button>
+                                <a class="btn btn-outline-danger" style="width: 150px; margin-left: 40px" th:href="@{/}">Cancel</a>
+                            </div>
+                        </td>
+                    </tr>
+
+                </table>
+
+            </form>
+
+        </div>
+    </section>
+</div>
+<!-- Bootstrap core JS-->
+<script th:src="@{/bootstrap/js/bootstrap.bundle.min.js}"></script>
+</body>
+</html>

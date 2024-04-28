@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+
+>
+<div th:replace="~{header}"></div>
+<body>
+
+<div class="container">
+    <section class="jumbotron text-left">
+        <div class="row" align="left">
+            <h1> Check availability of our boats </h1>
+        </div>
+
+        <div class="container">
+            <form th:object="${filterDates}"
+                  th:action="@{/filter-boats/{id}(id=${id})}"
+                  method="post">
+                <table class="table table-light table-hover table-bordered" style="width: 40%" align="left">
+
+                    <tr>
+                        <td>
+                            <div class="form-group" style="width: 150px;margin-left: 7px">
+                                <label th:for="name_input_id">From:</label>
+                                <input
+                                        type="date"
+                                        id="name_input_id"
+                                        class="form-control"
+                                        th:field="*{startDate}">
+                                <p class="alert alert-danger" th:if="${#fields.hasErrors('startDate')}"
+                                   th:errors="*{startDate}"></p>
+
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="form-group" style="width: 150px;margin-left: 7px">
+                                <label th:for="size_input_id">To:</label>
+                                <input
+                                        type="date"
+                                        id="size_input_id"
+                                        class="form-control"
+                                        th:field="*{endDate}">
+                                <p class="alert alert-danger" th:if="${#fields.hasErrors('endDate')}"
+                                   th:errors="*{endDate}"></p>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="form-group">
+                                <button
+                                        type="submit"
+                                        class="btn btn-outline-success"
+                                        style="width: 150px;margin-left: 7px; margin-top: 10px">Get Boats
+                                </button>
+                                <a th:href="@{/filter-boats/{id}(id=${id})}" class="btn btn-outline-danger"
+                                   style="width: 150px;margin-left: 7px; margin-top: 10px">Clear Filter</a>
+                            </div>
+                        </td>
+                    </tr>
+
+                </table>
+
+            </form>
+
+        </div>
+    </section>
+    <div>
+        <a th:href="@{/loginPage/{id}(id=${customer.id})}" class="btn btn-outline-primary"
+           style="width: 150px;margin: 15px">Back to account</a>
+    </div>
+</div>
+<!-- Bootstrap core JS-->
+<script th:src="@{/bootstrap/js/bootstrap.bundle.min.js}"></script>
+</body>
+</html>
