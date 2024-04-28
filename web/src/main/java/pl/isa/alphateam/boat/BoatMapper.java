@@ -17,6 +17,7 @@ public class BoatMapper {
 
     public static Boat mapToBoat(BoatDto boatDto) {
         return Boat.builder()
+                .boatId(boatDto.getBoatId())
                 .name(boatDto.getName())
                 .capacity(boatDto.getCapacity())
                 .costPerDay(boatDto.getCostPerDay())

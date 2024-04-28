@@ -4,7 +4,7 @@
 >
 <head th:fragment="header">
     <meta charset="UTF-8">
-    <title>Spring Boot Thymeleaf Blog App</title>
+    <title>RentalApp</title>
     <link crossorigin="anonymous"
           href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
@@ -12,8 +12,8 @@
 
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark" th:fragment="navbar">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">BOAT RENTALS APP</a>
+        <div class="container-fluid" >
+            <a class="navbar-brand" align="left"href="#">BOAT RENTALS APP</a>
             <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
                     class="navbar-toggler" data-bs-target="#navbarSupportedContent" data-bs-toggle="collapse"
                     type="button">
@@ -23,20 +23,17 @@
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
                     <li class="nav-item">
-                        <a aria-current="page" class="btn btn-outline-primary"  style="width: 150px;margin-right: 7px" th:href="@{/menu}">Menu</a>
+                        <a aria-current="page" class="btn btn-primary"  style="width: 150px;margin-right: 7px" th:href="@{/menu}">Menu</a>
                     </li>
 
                     <li class="nav-item">
-                        <a aria-current="page" class="btn btn-outline-danger" style="width: 150px;margin-right: 7px" th:href="@{/boats}">WIP Find boat</a>
+                        <a aria-current="page" class="btn btn-primary" style="width: 150px;margin-right: 7px" th:href="@{/boats-parser}">List of boats</a>
                     </li>
                     <li class="nav-item">
-                        <a aria-current="page" class="btn btn-outline-success" style="width: 150px;margin-right: 7px" th:href="@{/boats-parser}">Find boat parser</a>
+                        <a aria-current="page" class="btn btn-primary" style="width: 150px;margin-right: 7px" th:href="@{/create-account}">Create account</a>
                     </li>
                     <li class="nav-item">
-                        <a aria-current="page" class="btn btn-outline-success" style="width: 150px;margin-right: 7px" th:href="@{/create-account}">Create account</a>
-                    </li>
-                    <li class="nav-item">
-                        <a aria-current="page" class="btn btn-outline-success" style="width: 150px;margin-right: 7px" th:href="@{/loginPage}">Login</a>
+                        <a aria-current="page" class="btn btn-primary" style="width: 150px;margin-right: 7px" th:href="@{/loginPage}">Login</a>
                     </li>
                 </ul>
             </div>

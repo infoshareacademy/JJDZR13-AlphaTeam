@@ -8,17 +8,16 @@
 
 <div class="container">
     <section class="jumbotron text-left">
-        <div class="row" align="left">
-            <h1> Create a new account </h1>
-        </div>
+
 
         <div class="container">
-
+            <div class="row">
+                <h1>Create a new account</h1>
+            </div>
             <form th:object="${customer}"
                   th:action="@{/create-account}"
                   method="post">
                 <table class="table table-light table-hover table-bordered" style="width: 40%" align="left">
-
                     <tr>
                         <td>
                             <div class="form-group">
@@ -180,10 +179,9 @@
                             <div class="container" >
                                 <button
                                         type="submit"
-                                        class="btn btn-outline-primary" style="width: 100px; margin-left: 15px">Create
+                                        class="btn btn-outline-success" style="width: 150px; margin-left: 15px">Create
                                 </button>
-
-                                <a class="btn btn-outline-danger" style="width: 100px; margin-left: 40px" th:href="@{/}">Cancel</a>
+                                <a class="btn btn-outline-danger" style="width: 150px; margin-left: 40px" th:href="@{/}">Cancel</a>
                             </div>
                         </td>
                     </tr>

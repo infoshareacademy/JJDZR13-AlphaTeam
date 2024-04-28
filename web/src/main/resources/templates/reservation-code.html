@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<div th:replace="~{header}"></div>
+
+
+<div class="container text-center">
+    <section class="jumbotron text-left">
+        <div class="container" align="left">
+            <div>
+                <h1 class="jumbotron-heading" th:text="'Reservation code : '+${reservation.getReservationCode()} "></h1>
+                <p></p>
+                <p>Reservation code is valid for 24 hours</p>
+            </div>
+            <table class="table table-light table-hover table-bordered" style="width: 50%" align="left">
+                <thead class="table-info">
+                <th style="width:20%"></th>
+                <th style="width:20%"></th>
+                </thead>
+                <tr>
+                    <td th:text="'Boat id: '" align="left"></td>
+                    <td th:text="${reservation.getBoat().boatId}" align="left"></td>
+                </tr>
+                <tr>
+                    <td th:text="'Boat name: '" align="left"></td>
+                    <td th:text="${reservation.getBoat().name}" align="left"></td>
+                </tr>
+                <tr>
+                    <td th:text="'From: '" align="left"></td>
+                    <td th:text="${reservation.startDate}" align="left"></td>
+                </tr>
+                <tr>
+                    <td th:text="'To: '" align="left"></td>
+                    <td th:text="${reservation.endDate}" align="left"></td>
+                </tr>
+                <tr>
+                    <td th:text="'Total cost: '" align="left"></td>
+                    <td th:text="${reservation.costOfReservation}" align="left"></td>
+                </tr>
+
+            </table>
+            <div class="container">
+            <a class="btn btn-outline-primary" th:href="@{/}" style="width: 150px; margin-left: 40px" >Back to Menu</a>
+        </div>
+        </div>
+
+    </section>
+</div>
+
+<!-- Bootstrap core JS-->
+<script th:src="@{/bootstrap/js/bootstrap.bundle.min.js}"></script>
+</body>
+</html>

@@ -148,4 +148,154 @@
   },
   "emailAddress" : "basia@email.com",
   "password" : "basia"
+}, {
+  "id" : 11,
+  "firstName" : "Basia",
+  "lastName" : "B",
+  "birthdayDate" : "2024-04-02",
+  "phoneNumber" : "1234567890",
+  "patentNo" : "1",
+  "address" : {
+    "country" : "Kraj",
+    "city" : "Miasto",
+    "street" : "Ulica",
+    "streetNo" : 2
+  },
+  "emailAddress" : "basia@email.com",
+  "password" : "basiaPass"
+}, {
+  "id" : 12,
+  "firstName" : "Adam",
+  "lastName" : "Adamski",
+  "birthdayDate" : "2007-01-01",
+  "phoneNumber" : "1234567890",
+  "patentNo" : "patent2",
+  "address" : {
+    "country" : "Kraj",
+    "city" : "Miasto",
+    "street" : "ulica",
+    "streetNo" : 1
+  },
+  "emailAddress" : "adam@email.com",
+  "password" : "adamPass"
+}, {
+  "id" : 13,
+  "firstName" : "Kasia",
+  "lastName" : "Kasinska",
+  "birthdayDate" : "2024-04-03",
+  "phoneNumber" : "0123456789",
+  "patentNo" : "2",
+  "address" : {
+    "country" : "Kraj",
+    "city" : "Miasto",
+    "street" : "ulica",
+    "streetNo" : 5
+  },
+  "emailAddress" : "kasia@email.com",
+  "password" : "kasiaPass"
+}, {
+  "id" : 14,
+  "firstName" : "Kasia",
+  "lastName" : "Kasinska",
+  "birthdayDate" : "2024-04-03",
+  "phoneNumber" : "0123456789",
+  "patentNo" : "2",
+  "address" : {
+    "country" : "Kraj",
+    "city" : "Miasto",
+    "street" : "ulica",
+    "streetNo" : 5
+  },
+  "emailAddress" : "kasia@email.com",
+  "password" : "kasiaPass"
+}, {
+  "id" : 15,
+  "firstName" : "Kasia",
+  "lastName" : "Kasinska",
+  "birthdayDate" : "2024-04-03",
+  "phoneNumber" : "0123456789",
+  "patentNo" : "2",
+  "address" : {
+    "country" : "Kraj",
+    "city" : "Miasto",
+    "street" : "ulica",
+    "streetNo" : 5
+  },
+  "emailAddress" : "kasia@email.com",
+  "password" : "kasiaPass"
+}, {
+  "id" : 16,
+  "firstName" : "Kasia",
+  "lastName" : "Kasinska",
+  "birthdayDate" : "2024-04-03",
+  "phoneNumber" : "0123456789",
+  "patentNo" : "2",
+  "address" : {
+    "country" : "Kraj",
+    "city" : "Miasto",
+    "street" : "ulica",
+    "streetNo" : 5
+  },
+  "emailAddress" : "kasia@email.com",
+  "password" : "kasiaPass"
+}, {
+  "id" : 17,
+  "firstName" : "Kasia",
+  "lastName" : "Kasinska",
+  "birthdayDate" : "2024-04-03",
+  "phoneNumber" : "0123456789",
+  "patentNo" : "2",
+  "address" : {
+    "country" : "Kraj",
+    "city" : "Miasto",
+    "street" : "ulica",
+    "streetNo" : 5
+  },
+  "emailAddress" : "kasia@email.com",
+  "password" : "kasiaPass"
+}, {
+  "id" : 18,
+  "firstName" : "Kasia",
+  "lastName" : "Kasinska",
+  "birthdayDate" : "2024-04-03",
+  "phoneNumber" : "0123456789",
+  "patentNo" : "2",
+  "address" : {
+    "country" : "Kraj",
+    "city" : "Miasto",
+    "street" : "ulica",
+    "streetNo" : 5
+  },
+  "emailAddress" : "kasia@email.com",
+  "password" : "kasiaPass"
+}, {
+  "id" : 19,
+  "firstName" : "Kasia",
+  "lastName" : "Kasinska",
+  "birthdayDate" : "2024-04-03",
+  "phoneNumber" : "0123456789",
+  "patentNo" : "2",
+  "address" : {
+    "country" : "Kraj",
+    "city" : "Miasto",
+    "street" : "ulica",
+    "streetNo" : 5
+  },
+  "emailAddress" : "kasia@email.com",
+  "password" : "kasiaPass"
+}, {
+  "id" : 20,
+  "firstName" : "Final",
+  "lastName" : "Test",
+  "birthdayDate" : "2010-12-27",
+  "phoneNumber" : "1234567890",
+  "patentNo" : "3",
+  "address" : {
+    "country" : "Kraj",
+    "city" : "Miasto",
+    "street" : "Ulica",
+    "streetNo" : 2
+  },
+  "emailAddress" : "final@email.com",
+  "password" : "finalPass"
 } ]

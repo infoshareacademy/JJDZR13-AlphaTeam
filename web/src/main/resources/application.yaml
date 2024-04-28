@@ -4,7 +4,7 @@ spring:
     cache: false
     prefix: file:web/src/main/resources/templates/
   datasource:
-    password: My123@Sql!
+    password: root
     url: jdbc:mysql://localhost:3306/boatapp?useSSL=false
     username: root
   jpa:

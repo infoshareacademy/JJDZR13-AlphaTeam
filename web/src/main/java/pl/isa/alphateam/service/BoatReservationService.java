@@ -1,7 +1,10 @@
 package pl.isa.alphateam.service;
 
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import pl.isa.alphateam.boat.Boat;
+import pl.isa.alphateam.controllers.CustomerController;
 import pl.isa.alphateam.customer.Customer;
 import pl.isa.alphateam.reservation.Reservation;
 
@@ -17,11 +20,16 @@ import static pl.isa.alphateam.parser.JSONParserReservation.saveReservationInDat
 import static pl.isa.alphateam.reservation.ReservationUtils.getListOfDaysForPeriod;
 
 public class BoatReservationService {
+    private static final Logger logger = LoggerFactory.getLogger(CustomerController.class);
     private static final Map<String, Reservation> reservationCodeMap = new HashMap<>();
 
     public static Reservation rentBoatWithReservationCode(String reservationCode) {
+        logger.info("inside Boat Reservation Service - rentBoatWithReservationCode");
         return reservationCodeMap.get(reservationCode);
     }
+    public static Map<String, Reservation> showCodesAndReservations() {
+        logger.info("inside Boat Reservation Service - rentBoatWithReservationCode");
+        return reservationCodeMap;    }
 
     public static boolean rentBoatForCustomerReservationCodeRoute(Customer customer, Reservation reservation) {
         List<Reservation> reservationList = new ArrayList<>(getListOfReservationsFromDatabase());
@@ -51,7 +59,7 @@ public class BoatReservationService {
         return reservation;
     }
 
-    private static Boat getBoatBasedOnBoatID(int boatID) {
+    public static Boat getBoatBasedOnBoatID(int boatID) {
         List<Boat> boats = getListOfBoatsFromDatabase();
         return boats.stream().filter(b -> b.getBoatId() == boatID).toList().get(0);
     }

@@ -2,6 +2,9 @@ package pl.isa.alphateam.reservation;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+import org.springframework.stereotype.Component;
 import pl.isa.alphateam.boat.Boat;
 import pl.isa.alphateam.customer.Customer;
 
@@ -11,7 +14,8 @@ import java.time.LocalDate;
 
 import static pl.isa.alphateam.reservation.ReservationUtils.generateId;
 
-
+@Component
+@AllArgsConstructor
 public class Reservation {
     private LocalDate startDate;
     private LocalDate endDate;

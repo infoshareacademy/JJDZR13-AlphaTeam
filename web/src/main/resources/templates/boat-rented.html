@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<div th:replace="~{header}"></div>
+
+
+<div class="container text-center">
+    <section class="jumbotron text-left">
+
+        <div class="container" align="left">
+            <div class="container">
+                <br>
+                <p>You have successfully rented boat</p>
+            </div>
+            <div>
+                <h1 class="jumbotron-heading" th:text="'Rental details for '+${customer.firstName} +' '+ ${customer.lastName}"></h1>
+            </div>
+
+            <table class="table table-light table-hover table-bordered" style="width: 50%" align="left">
+                <thead class="table-info">
+                <th style="width:20%"></th>
+                <th style="width:20%"></th>
+                </thead>
+                <tr>
+                    <td th:text="'Boat name: '" align="left"></td>
+                    <td th:text="${reservation.getBoat().name}" align="left"></td>
+                </tr>
+                <tr>
+                    <td th:text="'Boat id: '" align="left"></td>
+                    <td th:text="${reservation.getBoat().boatId}" align="left"></td>
+                </tr>
+                <tr>
+                    <td th:text="'From : '" align="left"></td>
+                    <td th:text="${reservation.startDate}" align="left"></td>
+                </tr>
+                <tr>
+                    <td th:text="'To : '" align="left"></td>
+                    <td th:text="${reservation.endDate}" align="left"></td>
+                </tr>
+                <tr>
+                    <td th:text="'Total cost : '" align="left"></td>
+                    <td th:text="${reservation.getCostOfReservation()}" align="left"></td>
+                </tr>
+
+
+            </table>
+            <div>
+                <a th:href="@{/loginPage/{id}(id=${customer.id})}" class="btn btn-outline-success" style="width: 150px;margin-left: 7px; margin-top: 10px">Back to Account</a>
+            </div>
+            <div class="container">
+                <a class="btn btn-outline-primary" style="width: 150px;margin-left: 7px; margin-top: 10px" th:href="@{/}">Back to Menu</a>
+            </div>
+        </div>
+
+    </section>
+</div>
+
+<!-- Bootstrap core JS-->
+<script th:src="@{/bootstrap/js/bootstrap.bundle.min.js}"></script>
+</body>
+</html>

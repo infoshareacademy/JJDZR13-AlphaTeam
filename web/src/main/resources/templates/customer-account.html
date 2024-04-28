@@ -6,21 +6,21 @@
 
 <div class="container text-center">
     <section class="jumbotron text-left">
-        <div class="container">
-            <br>
-            <p>Customer account</p>
+        <div>
+            <p align="left">Customer account</p>
+            <h1 class="jumbotron-heading" th:text="'Welcome '+${customer.firstName} +' '+ ${customer.lastName}"
+                align="left"></h1>
+            <p></p>
         </div>
 
-        <div class="container">
-            <div>
-                <h1 class="jumbotron-heading" th:text="'Welcome '+${customer.firstName} +' '+ ${customer.lastName}"></h1>
-            </div>
-        </div>
-        <div class="container">
-            <a class="btn btn-outline-primary" th:href="@{/}">Rent a boat</a>
-            <a class="btn btn-outline-primary" th:href="@{/}">Enter code</a>
-            <a class="btn btn-outline-primary" th:href="@{/customer-account/{id}/rented-boats(id=${customer.id})}">Your rentals</a>
-            <a class="btn btn-outline-primary" th:href="@{/}">Logout</a>
+        <div class="container" align="left">
+            <a class="btn btn-outline-success" th:href="@{/filter-boats/{id}(id=${customer.id})}"
+               style="width: 150px">Rent a boat</a>
+            <a class="btn btn-outline-success" th:href="@{/customer-account-reservation/{id}(id=${customer.id})}"
+               style="width: 150px; margin-left: 40px">Enter code</a>
+            <a class="btn btn-outline-success" th:href="@{/customer-account/{id}/rented-boats(id=${customer.id})}"
+               style="width: 150px; margin-left: 40px">Your rentals</a>
+            <a class="btn btn-outline-success" th:href="@{/}" style="width: 150px; margin-left: 40px">Logout</a>
         </div>
     </section>
 </div>

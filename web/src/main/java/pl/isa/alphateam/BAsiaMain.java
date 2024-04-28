@@ -39,16 +39,18 @@ public class BAsiaMain {
         System.out.println(list);*/
 
 
-     /*   List<Reservation> reservationList = JSONParserReservation.getListOfReservationsFromDatabase();
-        System.out.println(reservationList);*/
-        BoatServiceImpl boatServiceImpl = new BoatServiceImpl();
-        LocalDate from = LocalDate.parse("2024-02-01");
-        LocalDate to = LocalDate.parse("2024-05-31");
+        List<Reservation> reservationList = JSONParserReservation.getListOfReservationsFromDatabase();
+        System.out.println(reservationList);
 
-        var boatlist =boatServiceImpl.findAllAvailableBoats(from, to);
+
+/*        BoatServiceImpl boatServiceImpl = new BoatServiceImpl();
+        LocalDate from = LocalDate.parse("2024-02-01");
+        LocalDate to = LocalDate.parse("2024-05-31");*/
+
+/*        var boatlist =boatServiceImpl.findAllAvailableBoats(from, to);
         for (BoatDto boat : boatlist) {
             System.out.println(boat.getBoatId()+" "+boat.getNotAvailableDates());
-        }
+        }*/
     }
 
 }
