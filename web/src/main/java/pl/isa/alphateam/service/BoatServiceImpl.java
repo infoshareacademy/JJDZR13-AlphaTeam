@@ -27,14 +27,14 @@ public class BoatServiceImpl implements BoatService {
         this.boatRepository = boatRepository;
     }
 
-    @Override
-    public List<BoatDto> findAllBoats() {
-        List<Boat> boats = boatRepository.findAll();
-        return boats.stream()
-                .map(BoatMapper::mapToBoatDto)
-                .collect(Collectors.toList());
-
-    }
+//    @Override
+//    public List<BoatDto> findAllBoats() {
+//        List<Boat> boats = boatRepository.findAll();
+//        return boats.stream()
+//                .map(BoatMapper::mapToBoatDto)
+//                .collect(Collectors.toList());
+//
+//    }
 
  /*   @Override
     public BoatDto findPostById(Long boatId) {
