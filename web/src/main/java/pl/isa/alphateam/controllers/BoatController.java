@@ -35,9 +35,9 @@ import static pl.isa.alphateam.service.BoatReservationService.rentBoatForCustome
 public class BoatController {
     private static final Logger logger = LoggerFactory.getLogger(BoatController.class);
 
-    private BoatService boatService;
+    private final BoatService boatService;
 
-
+    @Autowired
     public BoatController(BoatService boatService) {
         this.boatService = boatService;
     }
@@ -47,21 +47,32 @@ public class BoatController {
         logger.info("inside index");
         return "menu";
     }
+
     @GetMapping("/boats")
     public String getListOfBoats(Model model) {
         logger.info("inside boats");
-
+        List<Boat> boats = boatService.findAll();
+        model.addAttribute("boats", boats);
         return "list-of-boats";
     }
+
     @GetMapping("/boats/add")
     public String showAddBoatForm(Model model) {
         model.addAttribute("boat", new Boat());
         return "add-boatForm";
     }
-    @PostMapping("/add-boat")
-    public String addBoat(@ModelAttribute Boat boat) {
-       return "redirect:/boats-parser";
+
+    @PostMapping("/boats/add")
+    public String addBoat(@Valid @ModelAttribute("boat") Boat boat,
+                          BindingResult result,
+                          Model model) {
+        if (result.hasErrors()) {
+            return "add-boatForm";
+        }
+        boatService.save(boat);
+        return "redirect:/boats";
     }
+
     @GetMapping("/boats-parser")
     public String getListOfBoatsParser(Model model) {
         logger.info("inside boats-parser");

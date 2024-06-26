@@ -7,10 +7,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 public interface BoatService {
-    //List<BoatDto> findAllBoats();
-
-
-   // BoatDto findPostById(Long boatId);
+   void save(Boat boat);
    List<BoatDto> findAllAvailableBoats(LocalDate from, LocalDate to);
-
+   List<Boat> findAll();
 }

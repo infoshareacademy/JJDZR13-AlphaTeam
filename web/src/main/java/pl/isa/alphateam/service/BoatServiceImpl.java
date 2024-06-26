@@ -19,14 +19,20 @@ import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor//added as there were some issues https://www.baeldung.com/java-lombok-constructor-annotation
+
+
 public class BoatServiceImpl implements BoatService {
 
-    private BoatRepository boatRepository;
+    private final BoatRepository boatRepository;
 
-    public BoatServiceImpl(BoatRepository boatRepository) {
-        this.boatRepository = boatRepository;
+    @Override
+    public void save(Boat boat) {
+        boatRepository.save(boat);
     }
-
+    @Override
+    public List<Boat> findAll() {
+        return boatRepository.findAll();
+    }
 //    @Override
 //    public List<BoatDto> findAllBoats() {
 //        List<Boat> boats = boatRepository.findAll();
