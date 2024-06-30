@@ -1,5 +1,4 @@
 package pl.isa.alphateam.controllers;
-
 import jakarta.validation.Valid;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -32,14 +31,13 @@ import static pl.isa.alphateam.boat.BoatMapper.mapToBoat;
 import static pl.isa.alphateam.service.BoatReservationService.getBoatBasedOnBoatID;
 import static pl.isa.alphateam.service.BoatReservationService.rentBoatForCustomer;
 
-
 @Controller
 public class BoatController {
     private static final Logger logger = LoggerFactory.getLogger(BoatController.class);
 
-    private BoatService boatService;
+    private final BoatService boatService;
 
-
+    @Autowired
     public BoatController(BoatService boatService) {
         this.boatService = boatService;
     }
@@ -50,12 +48,29 @@ public class BoatController {
         return "menu";
     }
 
-
     @GetMapping("/boats")
     public String getListOfBoats(Model model) {
         logger.info("inside boats");
-
+        List<Boat> boats = boatService.findAll();
+        model.addAttribute("boats", boats);
         return "list-of-boats";
+    }
+
+    @GetMapping("/boats/add")
+    public String showAddBoatForm(Model model) {
+        model.addAttribute("boat", new Boat());
+        return "add-boatForm";
+    }
+
+    @PostMapping("/boats/add")
+    public String addBoat(@Valid @ModelAttribute("boat") Boat boat,
+                          BindingResult result,
+                          Model model) {
+        if (result.hasErrors()) {
+            return "add-boatForm";
+        }
+        boatService.save(boat);
+        return "redirect:/boats";
     }
 
     @GetMapping("/boats-parser")
