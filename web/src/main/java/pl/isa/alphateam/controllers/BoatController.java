@@ -73,7 +73,7 @@ public class BoatController {
         return "redirect:/boats";
     }
 
-    @GetMapping("/boats-parser")
+     @GetMapping("/boats-parser")
     public String getListOfBoatsParser(Model model) {
         logger.info("inside boats-parser");
         LocalDate startDate = LocalDate.parse("2002-01-01");
